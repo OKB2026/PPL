@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>Test App</title>
 
@@ -11,6 +12,7 @@ background:#f5f7fb;
 margin:0;
 padding:0;
 text-align:center;
+padding-bottom:40px;
 }
 
 h1{
@@ -171,38 +173,36 @@ margin-bottom:15px;
 background:#f39c12;
 color:white;
 }
-.dark-mode {
+.dark{
 background:#121212;
-color:#ffffff;
+color:white;
 }
 
 /* main containers */
-.dark-mode #menu,
-.dark-mode #quiz,
-.dark-mode #result {
+.dark #menu,
+.dark #quiz,
+.dark #result{
 background:#1e1e1e;
-color:#ffffff;
 }
 
-/* buttons */
-.dark-mode button {
-background:#2a2a2a;
-color:#ffffff;
-border:1px solid #444;
-}
-
-/* hover effect */
-.dark-mode button:hover {
+.dark #menu button{
 background:#3a3a3a;
 }
 
+.dark #menu button.finalExam{
+background:#2e7d32;
+}
+
+/* buttons */
+
+
 /* progress bar background */
-.dark-mode .progress-container {
+.dark .progress-container {
 background:#333;
 }
 
 /* progress bar fill */
-.dark-mode .progress-bar {
+.dark .progress-bar {
 background:#4f8cff;
 }
 button{
@@ -247,7 +247,7 @@ bottom:0;
 background:white;
 padding:10px;
 }
-.dark-mode .nav-buttons{
+.dark .nav-buttons{
 background:#1e1e1e;
 }
 button{
@@ -257,19 +257,74 @@ touch-action:manipulation;
 font-size:20px;
 margin-bottom:20px;
 }
-body{
-padding-bottom:40px;
+.dark-mode-btn{
+margin-top:20px;
+padding:8px 14px;
+font-size:14px;
+border-radius:6px;
+}
+.dark-mode-float{
+position:fixed;
+bottom:20px;
+right:20px;
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+border:none;
+
+background:#444;
+color:white;
+
+font-size:18px;
+cursor:pointer;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+z-index:1000;
+transition:0.3s;
+}
+
+.dark-mode-float:hover{
+transform:scale(1.1);
+background:#555;
+}
+
+/* dark mode */
+.dark #topic button{
+background:#2a2a2a;
+color:white;
+}
+
+.dark #topic button.active{
+background:#4f8cff;
+}
+#topic button.active{
+background:#27ae60;
 }
 </style>
 
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <body>
 
 <h1>Test Application</h1>
 
-<div id="menu"></div>
+<div id="menu">
+
+    <!-- your test buttons here -->
+</div>
+
+<!-- FLOATING BUTTON OUTSIDE -->
+<button class="darkToggle dark-mode-float" onclick="toggleDarkMode()">
+🌙
+</button>
 
 <div id="quiz">
 
@@ -287,15 +342,18 @@ padding-bottom:40px;
         <button onclick="nextQuestion()">Next</button>
         <button onclick="goToMenu()">Back to Menu</button>
         <button onclick="reviewWrong()">Review Wrong</button>
-        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
         </div>
-    <div id="timer">40:00</div>
+        <div id="timer">40:00</div>
+        <h2 id="questionNumber"></h2>
+        <p id="questionText"></p>
+   
     
     </div>
 
 <div id="result"></div>
 
 <script>
+
 let userAnswers = []
 // QUESTION DATABASE
 // You will replace these with your real questions
@@ -474,7 +532,7 @@ correct:[3,4]
 },
 
 {
-question:"14. ETD obejmuje pobranie próbek z:",
+question:"14. Kontrola bezpieczeństwa pasaera przy uzyciu ETD obejmuje pobranie próbek z:",
 answers:[
 "dłoni i paszportu",
 "telefonu i zapięć koszuli",
@@ -585,7 +643,7 @@ correct:[0,1,2,3,4,5,6,8,9,13]
 },
 
 {
-question:"22. Jeżeli skaner osób reaguje alarmem, przyczynę można ustalić poprzez:",
+question:"22. Jeżeli urządzenie do prześwietlania osób niewykorzystujące promieniowania jonizującego reaguje alarmem, przyczynę można ustalić poprzez:",
 answers:[
 "ETD",
 "kontrolę manualną",
@@ -740,7 +798,7 @@ correct:[2]
 },
 
 {
-question:"34. ETD – próbki pobiera się z:",
+question:"34. Podczas kontroli bezpieczeństwa pasazera z wykorzystaniem ETD – próbki pobiera się z:",
 answers:[
 "pasa i dłoni",
 "butów i zapięć ubrań",
@@ -5332,7 +5390,6 @@ correct:[]
 ]
 
 }
-
 let currentQuestions = []
 let currentIndex = 0
 let correctAnswers = 0
@@ -5363,9 +5420,24 @@ menu.appendChild(finalBtn)
 
 function startTest(testName){
 
-currentQuestions = tests[testName]
-startQuiz()
+if(!tests[testName]){
+alert("Test not found: " + testName)
+return
+}
 
+currentQuestions = tests[testName]
+
+// 🔥 RESET EVERYTHING
+currentIndex = 0
+correctAnswers = 0
+userAnswers = []
+
+// 🔥 SHOW QUIZ
+document.getElementById("menu").style.display = "none"
+document.getElementById("quiz").style.display = "block"
+
+// 🔥 START
+startQuiz()
 }
 
 
@@ -5422,10 +5494,16 @@ showQuestion()
 // SHOW QUESTION
 
 function showQuestion(){
-let progress = ((currentIndex) / currentQuestions.length) * 100
-document.getElementById("progressBar").style.width = progress + "%"
 
-let q = currentQuestions[currentIndex]
+if(!currentQuestions || currentQuestions.length === 0){
+console.error("No questions loaded")
+return
+}
+
+let q = currentQuestions[currentIndex]   // 🔥 THIS WAS MISSING
+
+let progress = (currentIndex / currentQuestions.length) * 100
+document.getElementById("progressBar").style.width = progress + "%"
 
 document.getElementById("questionNumber").innerText =
 "Question " + (currentIndex+1) + " / " + currentQuestions.length
@@ -5448,19 +5526,19 @@ label.appendChild(document.createTextNode(" " + a))
 
 answersDiv.appendChild(label)
 answersDiv.appendChild(document.createElement("br"))
-document.querySelector("#controls button").disabled = currentIndex === 0
-updateQuestionGrid()
 
 })
 
-}
+document.querySelector("#controls button").disabled = currentIndex === 0
 
+updateQuestionGrid()
+}
 
 // NEXT QUESTION
 
 function nextQuestion(){
 
-let q = currentQuestions[currentIndex]
+lfilteredQuestions[currentQuestion]
 
 let selected = []
 
@@ -5735,17 +5813,36 @@ document.getElementById("result").innerHTML = resultHTML
 }
 function toggleDarkMode(){
 
-document.body.classList.toggle("dark-mode")
+document.body.classList.toggle("dark");
 
-localStorage.setItem(
-"darkMode",
-document.body.classList.contains("dark-mode")
-)
+const isDark = document.body.classList.contains("dark");
+
+localStorage.setItem("darkMode", isDark);
+
+// update icon
+document.querySelectorAll(".darkToggle").forEach(btn=>{
+btn.innerText = isDark ? "☀️" : "🌙";
+});
 
 }
-if(localStorage.getItem("darkMode") === "true"){
-document.body.classList.add("dark-mode")
+
+// apply saved mode on load
+window.onload = function(){
+
+const saved = localStorage.getItem("darkMode") === "true";
+
+if(saved){
+document.body.classList.add("dark");
 }
+
+// update all buttons
+document.querySelectorAll(".darkToggle").forEach(btn=>{
+btn.innerText = saved ? "☀️" : "🌙";
+});
+
+};
+
+
 </script>
 
 </body>
