@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>Test App</title>
+<title>PPL Testy Próbne</title>
 
 <style>
 body{
@@ -85,19 +85,25 @@ background:#f0f4ff;
 }
 
 #controls{
-margin-top:25px;
 display:flex;
-justify-content:center;
+flex-wrap:wrap;
 gap:10px;
+justify-content:center;
+margin-bottom:15px;
 }
 
 #controls button{
-padding:12px 18px;
-border:none;
-border-radius:8px;
-font-size:15px;
-cursor:pointer;
-transition:0.2s;
+flex:1;
+min-width:120px;
+padding:12px;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:14px;
+}
+
+#controls button:disabled{
+background:#9ca3af;
 }
 
 #controls button:nth-child(1){
@@ -159,10 +165,6 @@ background:#2f80ed;
 color:white;
 }
 
-.questionAnswered{
-background:#27ae60;
-color:white;
-}
 #timer{
 font-size:22px;
 font-weight:bold;
@@ -307,6 +309,71 @@ background:#4f8cff;
 #topic button.active{
 background:#27ae60;
 }
+.navBtn.answered{
+background:#facc15;
+color:black;
+}
+.questionBox{
+background:#e5e7eb;
+padding:8px;
+margin:2px;
+text-align:center;
+border-radius:6px;
+cursor:pointer;
+}
+
+.questionCurrent{
+outline:2px solid #2563eb;
+}
+
+.questionAnswered{
+background:#3b82f6 !important;
+color:white;
+border:2px solid #1d4ed8;
+}
+
+.questionCorrect{
+background:#22c55e !important;
+color:white;
+border:2px solid #15803d;
+}
+
+.questionWrong{
+background:#ef4444 !important;
+color:white;
+border:2px solid #991b1b;
+}
+.questionBox{
+transition:0.3s;
+}
+body.dark #questionText{
+color:#f9fafb;
+font-size:18px;
+line-height:1.5;
+letter-spacing:0.3px;
+}
+
+body.dark{
+background:#0f172a;
+color:white;
+}
+body.dark #answers label{
+color:#e5e7eb;
+}
+
+body.dark #answers label:hover{
+background:#2a2a2a;
+}
+#result{
+display:none;
+padding:20px;
+background:white;
+}
+
+body.dark #result{
+background:#1e1e1e;
+color:white;
+}
 </style>
 
 </head>
@@ -338,20 +405,26 @@ background:#27ae60;
     <div id="answers"></div>
     
     <div id="controls">
-        <button onclick="previousQuestion()">Previous</button>
-        <button onclick="nextQuestion()">Next</button>
-        <button onclick="goToMenu()">Back to Menu</button>
-        <button onclick="reviewWrong()">Review Wrong</button>
+
+        <button id="prevBtn" onclick="previousQuestion()">⬅️ Poprzednie</button>
+        
+        <button id="nextBtn" onclick="nextQuestion()">Następne ➡️</button>
+        
+        <button onclick="goToMenu()">🏠 Menu</button>
+        
+        <button onclick="reviewWrong()">❌ Błędne</button>
+        
         </div>
+        
         <div id="timer">40:00</div>
+        
         <h2 id="questionNumber"></h2>
+        
         <p id="questionText"></p>
-   
-    
+
+        <div id="result" style="display:none;"></div>
     </div>
-
-<div id="result"></div>
-
+</div>
 <script>
 
 let userAnswers = []
@@ -5502,13 +5575,14 @@ return
 
 let q = currentQuestions[currentIndex]   // 🔥 THIS WAS MISSING
 
-let progress = (currentIndex / currentQuestions.length) * 100
+let progress = ((currentIndex + 1) / currentQuestions.length) * 100
 document.getElementById("progressBar").style.width = progress + "%"
 
 document.getElementById("questionNumber").innerText =
 "Question " + (currentIndex+1) + " / " + currentQuestions.length
 
 document.getElementById("questionText").innerText = q.question
+document.getElementById("questionText").style.color = "black";
 
 let answersDiv = document.getElementById("answers")
 answersDiv.innerHTML = ""
@@ -5528,9 +5602,18 @@ answersDiv.appendChild(label)
 answersDiv.appendChild(document.createElement("br"))
 
 })
+if(userAnswers[currentIndex]){
+let inputs = answersDiv.querySelectorAll("input");
 
-document.querySelector("#controls button").disabled = currentIndex === 0
+userAnswers[currentIndex].forEach(i=>{
+if(inputs[i]){
+inputs[i].checked = true;
+}
+});
+}
 
+document.getElementById("prevBtn").disabled = currentIndex === 0;
+window.scrollTo({ top: 0, behavior: "smooth" });
 updateQuestionGrid()
 }
 
@@ -5538,30 +5621,51 @@ updateQuestionGrid()
 
 function nextQuestion(){
 
-lfilteredQuestions[currentQuestion]
+let q = currentQuestions[currentIndex];
 
-let selected = []
+// GET SELECTED ANSWERS
+let selected = [];
 
 document.querySelectorAll("#answers input:checked").forEach(el=>{
-selected.push(parseInt(el.value))
-})
+selected.push(parseInt(el.value));
+});
 
-userAnswers[currentIndex] = selected
+userAnswers[currentIndex] = selected;
 
-selected.sort()
-let correct = [...q.correct].sort()
+// PREPARE CORRECT ANSWER
+selected.sort();
+let correct = [...q.correct].sort();
 
-if(JSON.stringify(selected) === JSON.stringify(correct)){
-correctAnswers++
+let isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+
+// 🎨 SHOW FEEDBACK
+let feedback = document.getElementById("questionText");
+feedback.style.color = isCorrect ? "green" : "red";
+
+// COUNT SCORE ONLY ONCE
+if(!q.answered){
+if(isCorrect){
+correctAnswers++;
+}
+q.answered = true;
 }
 
-currentIndex++
+// UPDATE GRID
+updateQuestionGrid();
 
-if(currentIndex >= currentQuestions.length){
-showResult()
-}else{
-showQuestion()
+// 🔥 MOVE LOGIC HERE (NO BUGS)
+setTimeout(()=>{
+
+// 🔥 CHECK BEFORE INCREMENT
+if(currentIndex === currentQuestions.length - 1){
+showResult();
+return;
 }
+
+currentIndex++;
+showQuestion();
+
+},500);
 
 }
 function previousQuestion(){
@@ -5606,40 +5710,53 @@ menu.appendChild(finalBtn)
 // RESULT
 
 function showResult(){
+    console.log("RESULT WORKS");
+clearInterval(timer);
 
-    clearInterval(timer)
-document.getElementById("quiz").style.display="none"
+document.getElementById("quiz").style.display="none";
 
-let score = (correctAnswers/currentQuestions.length)*100
-let pass = correctAnswers >= currentQuestions.length*0.8
+let percent = (correctAnswers/currentQuestions.length)*100;
+let pass = percent >= 80;
 
-let resultDiv = document.getElementById("result")
+let resultDiv = document.getElementById("result");
 
 let html = `
 <h2>RESULT</h2>
-Correct answers: ${correctAnswers} / ${currentQuestions.length}<br>
-Score: ${score.toFixed(1)}%<br>
-Status: ${pass ? "PASS ✅" : "FAIL ❌"}<br><br>
+
+<p><b>Score:</b> ${correctAnswers} / ${currentQuestions.length}</p>
+<p><b>Percentage:</b> ${percent.toFixed(1)}%</p>
+
+<p style="font-size:20px; font-weight:bold; color:${pass ? "green" : "red"}">
+${pass ? "PASS ✅" : "FAIL ❌"}
+</p>
+
+<br>
 <h3>Review Answers</h3>
-`
+`;
 
 currentQuestions.forEach((q,i)=>{
 
-let correctText = q.correct.map(i=>q.answers[i]).join(", ")
-let userText = (userAnswers[i] || []).map(i=>q.answers[i]).join(", ")
+let correctText = q.correct.map(i=>q.answers[i]).join(", ");
+let userText = (userAnswers[i] || []).map(i=>q.answers[i]).join(", ");
+
+let isCorrect =
+JSON.stringify((userAnswers[i]||[]).sort()) ===
+JSON.stringify([...q.correct].sort());
 
 html += `
-<div style="margin-bottom:20px;">
+<div style="margin-bottom:15px;">
 <b>${i+1}. ${q.question}</b><br>
-Your answer: ${userText || "None"}<br>
+Your answer: <span style="color:${isCorrect?"green":"red"}">${userText || "None"}</span><br>
 Correct answer: ${correctText}
 </div>
-`
+`;
 
-})
+});
 
-resultDiv.style.display="block"
-resultDiv.innerHTML = html
+resultDiv.style.display="block";
+resultDiv.style.visibility="visible";
+resultDiv.style.opacity="1";
+resultDiv.innerHTML = html;
 
 }
 function createQuestionGrid(){
@@ -5666,23 +5783,35 @@ grid.appendChild(box)
 
 }
 function updateQuestionGrid(){
-
-let boxes = document.querySelectorAll(".questionBox")
+    console.log("BOX:", i, userAnswers[i]);
+let boxes = document.querySelectorAll(".questionBox");
 
 boxes.forEach((box,i)=>{
 
-box.classList.remove("questionCurrent")
-box.classList.remove("questionAnswered")
+box.classList.remove("questionCurrent","questionAnswered","questionCorrect","questionWrong");
 
 if(i === currentIndex){
-box.classList.add("questionCurrent")
+box.classList.add("questionCurrent");
 }
 
 if(userAnswers[i] && userAnswers[i].length > 0){
-box.classList.add("questionAnswered")
+
+box.classList.add("questionAnswered"); // 🔵 BLUE
+
+let q = currentQuestions[i];
+
+let correct = [...q.correct].sort();
+let user = (userAnswers[i] || []).sort();
+
+if(JSON.stringify(user) === JSON.stringify(correct)){
+box.classList.add("questionCorrect"); // 🟢
+}else{
+box.classList.add("questionWrong"); // 🔴
 }
 
-})
+}
+
+});
 
 }
 
@@ -5770,47 +5899,9 @@ return
 showResult()
 
 }
-timer = setInterval(function(){
 
-timeLeft--
 
-if(timeLeft === 300){
-alert("⚠ Only 5 minutes remaining!")
-}
 
-if(timeLeft <= 0){
-finishExam()
-}
-
-updateTimer()
-
-},1000)
-function showResult(){
-
-let correct = 0
-
-currentTest.forEach((q,i)=>{
-if(q.correct.includes(userAnswers[i])){
-correct++
-}
-})
-
-let percent = Math.round((correct/currentTest.length)*100)
-
-let resultHTML = `
-<h2>Exam Summary</h2>
-
-<p>Score: ${correct} / ${currentTest.length}</p>
-<p>Percentage: ${percent}%</p>
-
-<p>Correct: ${correct}</p>
-<p>Wrong: ${currentTest.length - correct}</p>
-
-`
-
-document.getElementById("result").innerHTML = resultHTML
-
-}
 function toggleDarkMode(){
 
 document.body.classList.toggle("dark");
@@ -5841,6 +5932,7 @@ btn.innerText = saved ? "☀️" : "🌙";
 });
 
 };
+
 
 
 </script>
