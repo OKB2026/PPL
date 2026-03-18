@@ -443,6 +443,20 @@ margin-bottom:10px;
 body.dark #questionNumber{
 color:#94a3b8;
 }
+#result button{
+margin-top:15px;
+padding:12px;
+border-radius:10px;
+background:#2563eb;
+color:white;
+border:none;
+font-size:16px;
+cursor:pointer;
+}
+
+#result button:hover{
+opacity:0.85;
+}
 </style>
 
 </head>
@@ -462,41 +476,40 @@ color:#94a3b8;
 🌙
 </button>
 
-<div id="quiz">
+<div id="menu"></div>
+
+<div id="quiz" style="display:none;">
 
     <div id="progressContainer">
-    <div id="progressBar"></div>
+        <div id="progressBar"></div>
     </div>
+
     <div id="questionGrid"></div>
+
     <h2 id="questionNumber"></h2>
     <p id="questionText"></p>
-    
+
     <div id="answers"></div>
-    
+
     <div id="controls">
-
         <button id="prevBtn" onclick="previousQuestion()">⬅️ Poprzednie</button>
-        
+        <button onclick="submitAnswer()">✅ Zapisz</button>
         <button id="nextBtn" onclick="nextQuestion()">Następne ➡️</button>
-        
         <button onclick="goToMenu()">🏠 Menu</button>
-        
         <button onclick="reviewWrong()">❌ Błędne</button>
-        
-        </div>
-        
-        <div id="timer">40:00</div>
-        
-        <h2 id="questionNumber"></h2>
-        
-        <p id="questionText"></p>
-
-        <div id="result" style="display:none;"></div>
     </div>
-</div>
-<script>
 
-let userAnswers = []
+    <div id="timer">40:00</div>
+
+</div>
+
+<!-- ✅ RESULT OUTSIDE -->
+<div id="result" style="display:none;"></div>
+<script>
+window.onerror = function(msg, url, line){
+    alert("ERROR: " + msg + " at line " + line);
+};
+
 // QUESTION DATABASE
 // You will replace these with your real questions
 
@@ -5536,6 +5549,11 @@ let currentQuestions = []
 let currentIndex = 0
 let correctAnswers = 0
 let selectedAnswer = null
+let userAnswers = []
+
+// ✅ ADD THIS
+let timer;
+
 const menu = document.getElementById("menu")
 
 // CREATE TEST BUTTONS
@@ -5556,6 +5574,12 @@ finalBtn.innerText = "FINAL EXAM"
 finalBtn.className = "finalExam"
 finalBtn.onclick = startFinalExam
 menu.appendChild(finalBtn)
+let statsBtn = document.createElement("button");
+statsBtn.innerText = "📊 Topics Dashboard";
+statsBtn.style.background = "#f59e0b";
+statsBtn.onclick = showTopicDashboard;
+
+menu.appendChild(statsBtn);
 
 
 // START TEST
@@ -5568,6 +5592,11 @@ return
 }
 
 currentQuestions = tests[testName]
+currentQuestions.forEach(q=>{
+if(!q.correct && q.answer){
+q.correct = q.answer;
+}
+});
 
 // 🔥 RESET EVERYTHING
 currentIndex = 0
@@ -5596,6 +5625,11 @@ allQuestions = allQuestions.concat(test)
 allQuestions.sort(()=>Math.random()-0.5)
 
 currentQuestions = allQuestions.slice(0,40)
+currentQuestions.forEach(q=>{
+if(!q.correct && q.answer){
+q.correct = q.answer;
+}
+});
 
 document.getElementById("menu").style.display="none"
 document.getElementById("quiz").style.display="block"
@@ -5687,31 +5721,61 @@ inputs[i].checked = true;
 document.getElementById("prevBtn").disabled = currentIndex === 0;
 window.scrollTo(0,0);
 updateQuestionGrid()
+
+// ENABLE INPUTS AGAIN
+document.querySelectorAll("#answers input").forEach(el=>{
+el.disabled = false;
+});
 }
+
 
 // NEXT QUESTION
 
 function nextQuestion(){
 
+// ❗ BLOCK IF NOT ANSWERED
+if(userAnswers[currentIndex] === undefined){
+alert("Submit your answer first!");
+return;
+}
+
+// 👉 IF LAST → RESULT
+if(currentIndex >= currentQuestions.length - 1){
+showResult();
+return;
+}
+
+// NEXT
+currentIndex++;
+showQuestion();
+
+}
+function submitAnswer(){
+
 let q = currentQuestions[currentIndex];
 
-// GET SELECTED ANSWERS
+// GET SELECTED
 let selected = [];
-
 document.querySelectorAll("#answers input:checked").forEach(el=>{
 selected.push(parseInt(el.value));
 });
 
+// ❗ PREVENT EMPTY
+if(selected.length === 0){
+alert("Select an answer first!");
+return;
+}
+
+// SAVE
 userAnswers[currentIndex] = selected;
-console.log("SAVED:", currentIndex, selected);
 
-// PREPARE CORRECT ANSWER
-selected.sort();
-let correct = [...q.correct].sort();
+// CHECK
+let correct = [...(q.correct || [])].sort();
+let user = [...selected].sort();
 
-let isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+let isCorrect = JSON.stringify(user) === JSON.stringify(correct);
 
-// ✅ COUNT ONLY ONCE
+// COUNT ONLY ONCE
 if(!q.answered){
 if(isCorrect){
 correctAnswers++;
@@ -5719,21 +5783,38 @@ correctAnswers++;
 q.answered = true;
 }
 
-// 🎨 SHOW FEEDBACK
-let feedback = document.getElementById("questionText");
-feedback.style.color = isCorrect ? "green" : "red";
+// REMOVE OLD INFO
+let old = document.getElementById("correctInfo");
+if(old) old.remove();
 
-// ✅ UPDATE GRID AFTER EVERYTHING
-updateQuestionGrid();
+// COLOR + SHOW CORRECT
+let qText = document.getElementById("questionText");
 
-// GO NEXT
-if(currentIndex === currentQuestions.length - 1){
-showResult();
-return;
+if(isCorrect){
+qText.style.color = "green";
+} else {
+qText.style.color = "red";
+
+let correctText = q.correct.map(i => q.answers[i]).join(", ");
+
+let info = document.createElement("div");
+info.id = "correctInfo";
+info.style.marginTop = "10px";
+info.style.fontWeight = "bold";
+info.style.color = "#22c55e";
+info.innerText = "Correct answer: " + correctText;
+
+document.getElementById("answers").appendChild(info);
 }
 
-currentIndex++;
-showQuestion();
+// 🔒 DISABLE ANSWERS AFTER SUBMIT
+document.querySelectorAll("#answers input").forEach(el=>{
+el.disabled = true;
+});
+
+// UPDATE GRID
+updateQuestionGrid();
+
 }
 function previousQuestion(){
 
@@ -5741,12 +5822,6 @@ if(currentIndex > 0){
 currentIndex--
 showQuestion()
 }
-if(q.answered){
-currentIndex++;
-showQuestion();
-return;
-}
-
 }
 function goToMenu(){
 
@@ -5775,6 +5850,81 @@ finalBtn.className = "finalExam"
 finalBtn.onclick = startFinalExam
 
 menu.appendChild(finalBtn)
+let statsBtn = document.createElement("button");
+statsBtn.innerText = "📊 Topics Dashboard";
+statsBtn.style.background = "#f59e0b";
+statsBtn.onclick = showTopicDashboard;
+
+menu.appendChild(statsBtn);
+
+}
+function showTopicDashboard(){
+
+let resultDiv = document.getElementById("result");
+
+// 🧠 BUILD STATS
+let stats = {};
+
+currentQuestions.forEach((q,i)=>{
+
+let topic = q.topic || "General";
+
+if(!stats[topic]){
+stats[topic] = {
+total: 0,
+correct: 0
+};
+}
+
+stats[topic].total++;
+
+let user = userAnswers[i] || [];
+let correct = q.correct || [];
+
+if(JSON.stringify([...user].sort()) === JSON.stringify([...correct].sort())){
+stats[topic].correct++;
+}
+
+});
+
+// 🎨 BUILD HTML
+let html = `<h2>📊 Topics Dashboard</h2><br>`;
+
+// IF NO DATA
+if(Object.keys(stats).length === 0){
+html += `<p>No data yet. Complete a test first.</p>`;
+}
+
+Object.keys(stats).forEach(topic=>{
+
+let t = stats[topic];
+let percent = t.total === 0 ? 0 : Math.round((t.correct / t.total) * 100);
+
+html += `
+<div class="topicCard">
+<h3>${topic}</h3>
+<p>Correct: ${t.correct} / ${t.total}</p>
+<p>Accuracy: ${percent}%</p>
+
+<div class="topicBar">
+<div class="topicFill" style="width:${percent}%"></div>
+</div>
+</div>
+`;
+
+});
+
+// BACK BUTTON
+html += `
+<br>
+<button onclick="goToMenu()">🏠 Back</button>
+`;
+
+// SHOW SCREEN
+document.getElementById("menu").style.display = "none";
+document.getElementById("quiz").style.display = "none";
+resultDiv.style.display = "block";
+resultDiv.innerHTML = html;
 
 }
 
@@ -5782,12 +5932,17 @@ menu.appendChild(finalBtn)
 // RESULT
 
 function showResult(){
-    console.log("RESULT WORKS");
+    console.log("RESULT TRIGGERED");
+try {
+
+console.log("SHOW RESULT START");
+
 clearInterval(timer);
 
 document.getElementById("quiz").style.display="none";
 
-let percent = (correctAnswers/currentQuestions.length)*100;
+let total = currentQuestions.length;
+let percent = (correctAnswers / total) * 100;
 let pass = percent >= 80;
 
 let resultDiv = document.getElementById("result");
@@ -5795,40 +5950,42 @@ let resultDiv = document.getElementById("result");
 let html = `
 <h2>RESULT</h2>
 
-<p><b>Score:</b> ${correctAnswers} / ${currentQuestions.length}</p>
+<p><b>Score:</b> ${correctAnswers} / ${total}</p>
 <p><b>Percentage:</b> ${percent.toFixed(1)}%</p>
 
-<p style="font-size:20px; font-weight:bold; color:${pass ? "green" : "red"}">
+<div style="
+margin-top:10px;
+padding:10px;
+border-radius:10px;
+font-size:20px;
+font-weight:bold;
+background:${pass ? "#22c55e" : "#ef4444"};
+color:white;
+">
 ${pass ? "PASS ✅" : "FAIL ❌"}
-</p>
+</div>
 
 <br>
 <h3>Review Answers</h3>
 `;
-
-currentQuestions.forEach((q,i)=>{
-
-let correctText = q.correct.map(i=>q.answers[i]).join(", ");
-let userText = (userAnswers[i] || []).map(i=>q.answers[i]).join(", ");
-
-let isCorrect =
-JSON.stringify((userAnswers[i]||[]).sort()) ===
-JSON.stringify([...q.correct].sort());
-
 html += `
-<div style="margin-bottom:15px;">
-<b>${i+1}. ${q.question}</b><br>
-Your answer: <span style="color:${isCorrect?"green":"red"}">${userText || "None"}</span><br>
-Correct answer: ${correctText}
-</div>
+<br><br>
+
+<button onclick="goToMenu()" class="resultHomeBtn">
+🏠 Back to Menu
+</button>
 `;
 
-});
-
-resultDiv.style.display="block";
-resultDiv.style.visibility="visible";
-resultDiv.style.opacity="1";
+resultDiv.style.display = "block";
 resultDiv.innerHTML = html;
+
+console.log("RESULT END");
+
+} catch(e) {
+
+alert("CRASH: " + e.message);
+
+}
 
 }
 function createQuestionGrid(){
@@ -5872,7 +6029,7 @@ box.classList.add("questionAnswered"); // 🔵 BLUE
 
 let q = currentQuestions[i];
 
-let correct = [...q.correct].sort();
+let correct = [...(q.correct || [])].sort();
 let user = (userAnswers[i] || []).sort();
 
 if(JSON.stringify(user) === JSON.stringify(correct)){
@@ -5929,9 +6086,9 @@ let wrong = []
 currentQuestions.forEach((q,i)=>{
 
 let user = userAnswers[i] || []
-let correct = q.correct
+let correct = (q.correct || [])
 
-if(JSON.stringify(user.sort()) !== JSON.stringify(correct.sort())){
+if(JSON.stringify([...user].sort()) !== JSON.stringify([...correct].sort())){
 wrong.push(q)
 }
 
