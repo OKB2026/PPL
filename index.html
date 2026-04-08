@@ -457,6 +457,23 @@ cursor:pointer;
 #result button:hover{
 opacity:0.85;
 }
+.topicSelectBtn{
+display:block;
+width:100%;
+margin:8px 0;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#6366f1;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.topicSelectBtn:hover{
+background:#4f46e5;
+}
 </style>
 
 </head>
@@ -528,7 +545,8 @@ answers:[
 "wózek inwalidzki",
 "rozpylacz kwasu"
 ],
-correct:[3,5]
+correct:[3,5],
+topic:"SUPPLY"
 },
 
 {
@@ -540,7 +558,8 @@ answers:[
 "zatrzymania osoby nieposiadającej uprawnień",
 "sprawdzania przedmiotów wprowadzanych do strefy zastrzeżonej"
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"PERSON"
 },
 
 {
@@ -553,7 +572,8 @@ answers:[
 "kontrola wzrokowa jest nieskuteczna",
 "kontrola wzrokowa jest niepożądana ze względów religijnych"
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -566,7 +586,8 @@ answers:[
 "pracowników SOL podczas służby",
 "funkcjonariuszy służb państwowych z kartą identyfikacyjną"
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -579,7 +600,8 @@ answers:[
 "Straż Ochrony",
 "Służba Ochrony Lotniska"
 ],
-correct:[0,1,2,5]
+correct:[0,1,2,5],
+topic:"OTHER"
 },
 
 {
@@ -592,7 +614,8 @@ answers:[
 "ujęcia i przekazania Straży Granicznej osoby naruszającej porządek",
 "ujęcia i przekazania Policji pasażera naruszającego warunki przewozu"
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"OTHER"
 },
 
 {
@@ -605,7 +628,8 @@ answers:[
 "fajerwerki",
 "dynamit"
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -618,7 +642,8 @@ answers:[
 "naboje dymne",
 "urządzenia zapalające"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"CBS"
 },
 
 {
@@ -631,7 +656,8 @@ answers:[
 "wykrywacz metalu w butach",
 "ETD"
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"PERSON"
 },
 
 {
@@ -644,7 +670,8 @@ answers:[
 "skaner osób",
 "bramkę metali"
 ],
-correct:[0,1,3]
+correct:[0,1,3],
+topic:"PERSON"
 },
 
 {
@@ -657,7 +684,8 @@ answers:[
 "w momencie unieważnieniu karty",
 "w razie zmianiy potrzeby dostępu do stref, w odniesieniu do których udzielono upoważnienia"
 ],
-correct:[1,2,4,5]
+correct:[1,2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -670,7 +698,8 @@ answers:[
 "młotek 5 cm",
 "gazy łzawiące"
 ],
-correct:[1,2,5]
+correct:[1,2,5],
+topic:"SUPPLY"
 },
 
 {
@@ -683,11 +712,12 @@ answers:[
 "kontrola manualna",
 "system wykrywania urządzeń wybuchowych"
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"MAIL"
 },
 
 {
-question:"14. Kontrola bezpieczeństwa pasaera przy uzyciu ETD obejmuje pobranie próbek z:",
+question:"14. Kontrola bezpieczeństwa pasażera przy uzyciu ETD obejmuje pobranie próbek z:",
 answers:[
 "z wierzchy i spodu dłoni i paszportu przenoszonego przez pasażera",
 "telefonu komórkowego ostatnio dotykanego przez pasażera i zapięć koszuli",
@@ -696,7 +726,8 @@ answers:[
 "z wierzchu i spodu dłoni i zapięcia butów znajdujących się w bagażu kabinowym pasażera",
 "z wierzchu i spodu dłoni i z zewnętrznej i wewnętrznej strony obwodu na wysokości pasa"
 ],
-correct:[3]
+correct:[3],
+topic:"PERSON"
 },
 
 {
@@ -708,7 +739,8 @@ answers:[
 "materiały przewoźnika",
 "produkty spożywcze dla pasażerów"
 ],
-correct:[4]
+correct:[4],
+topic:"SUPPLY"
 },
 
 {
@@ -721,7 +753,8 @@ answers:[
 "nazwę stanowiska służbowego",
 "nazwę podmiotu wydającego"
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -734,7 +767,8 @@ answers:[
 "system do wykrywania urządzeń wybuchowych",
 "system do wykrywania płynnych materiałów wybuchowych"
 ],
-correct:[0,3]
+correct:[0,3],
+topic:"MAIL"
 },
 
 {
@@ -747,7 +781,8 @@ answers:[
 "bramkę metali",
 "skaner osób"
 ],
-correct:[0,3]
+correct:[0,3],
+topic:"PERSON"
 },
 
 {
@@ -760,7 +795,8 @@ answers:[
 "kajdanki",
 "nożyczki do papieru"
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -773,7 +809,8 @@ answers:[
 "kontrola wzrokowa",
 "urządzenie do wykrywania oparów materiałów wybuchowych"
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"MAIL"
 },
 
 {
@@ -794,7 +831,8 @@ answers:[
 "Służby Kontrwywiadu",
 "Centralnego Biura Antykorupcyjnego"
 ],
-correct:[0,1,2,3,4,5,6,8,9,10,13]
+correct:[0,1,2,3,4,5,6,8,9,10,13],
+topic:"OTHER"
 },
 
 {
@@ -807,7 +845,8 @@ answers:[
 "ponowną kontrolę skanerem",
 "bramkę metali"
 ],
-correct:[1,3,4]
+correct:[1,3,4],
+topic:"PERSON"
 },
 
 {
@@ -820,7 +859,8 @@ answers:[
 "ładunek i pocztę wysokiego ryzyka określone na podstawie wspólnej unijnej oceny ryzyka",
 "materiały jądrowe pod warunkiem że są one zabezpieczone zgopdnie z postanowieniami Konwencji o ochronie fizycznej materiałów jądrowych otwartej do podpisu w Nowym Jorku i Wiedniu w dniu 3 marca 1980r"
 ],
-correct:[0,1,2,3,5]
+correct:[0,1,2,3,5],
+topic:"CARGO"
 },
 
 {
@@ -833,7 +873,8 @@ answers:[
 "obsługi VIP",
 "kontroli bagażu"
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"PERSON"
 },
 
 {
@@ -846,7 +887,8 @@ answers:[
 "funkcjonariusza Policji",
 "funkcjonariusza Służby Celno-Skarbowej"
 ],
-correct:[0]
+correct:[0],
+topic:"PERSON"
 },
 
 {
@@ -859,7 +901,8 @@ answers:[
 "SPX SHR",
 "SHR SPX"
 ],
-correct:[4,5]
+correct:[4,5],
+topic:"CARGO"
 },
 
 {
@@ -872,7 +915,8 @@ answers:[
 "pasażer opuszcza samolot",
 "pasażer nie stawia się"
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"HBS"
 },
 
 {
@@ -885,7 +929,8 @@ answers:[
 "ETD + kontrola manualna",
 "wykrywanie oparów materiałów wybuchowych + wzrokowa"
 ],
-correct:[2,5]
+correct:[2,5],
+topic:"SUPPLY"
 },
 
 {
@@ -897,7 +942,8 @@ answers:[
 "rentgen",
 "wykrywanie materiałów wybuchowych"
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"HBS"
 },
 
 {
@@ -910,7 +956,8 @@ answers:[
 "Służba Ochrony Lotniska",
 "Specjalistyczna uzbrojona formacja ochronna"
 ],
-correct:[4]
+correct:[4],
+topic:"OTHER"
 },
 
 {
@@ -923,7 +970,8 @@ answers:[
 "wynik testu zapisywany w dokumentacji",
 "nie wymaga kontroli"
 ],
-correct:[0,4]
+correct:[0,4],
+topic:"OTHER"
 },
 
 {
@@ -936,7 +984,8 @@ answers:[
 "fajerwerki",
 "urządzenia do paraliżowania"
 ],
-correct:[1,4,5]
+correct:[1,4,5],
+topic:"MAIL"
 },
 
 {
@@ -949,7 +998,8 @@ answers:[
 "system wykrywania płynnych materiałów wybuchowych",
 "wykrywacz metalu"
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 
 {
@@ -962,7 +1012,8 @@ answers:[
 "ostatnio dotykanego przedmiotu i butów",
 "dłoni i przedmiotu"
 ],
-correct:[0,1,2,4]
+correct:[0,1,2,4],
+topic:"PERSON"
 },
 
 {
@@ -975,7 +1026,8 @@ answers:[
 "kontrola manualna + wykrywanie metalu w butach",
 "ETD + wykrywanie materiałów wybuchowych w butach"
 ],
-correct:[1,3,5]
+correct:[1,3,5],
+topic:"PERSON"
 },
 
 {
@@ -988,7 +1040,8 @@ answers:[
 "ETD + kontrola wzrokowa",
 "SED"
 ],
-correct:[0,1,2,3,4]
+correct:[0,1,2,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -1001,7 +1054,8 @@ answers:[
 "10-20% tak skontrolowanych pasażerów należy poddać kontroli w ykorzystaniem kontroli manualnej",
 "10-20% tak skontrolowanych pasażerów należy poddać kontroli z wykorzystaniem ETD"
 ],
-correct:[2,4,5]
+correct:[2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -1014,7 +1068,8 @@ answers:[
 "płyny w torebce 1l",
 "żadna odpowiedź"
 ],
-correct:[5]
+correct:[5],
+topic:"OTHER"
 },
 
 {
@@ -1027,7 +1082,8 @@ answers:[
 "zabezpieczone ustawienia",
 "rejestruje liczbę alarmów"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -1040,7 +1096,8 @@ answers:[
 "Policja sprawdza broń",
 "broń w bagażu kabinowym"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"HBS"
 }
 
 
@@ -1059,7 +1116,8 @@ answers:[
 "wykrywa każdy zamknięty nóż wykonany z porcelany",
 "musi być w stanie wykrywać przedmioty w zakresie od 0 do 1,5 m/s"
 ],
-correct:[0,3]
+correct:[0,3],
+topic:"OTHER"
 },
 
 {
@@ -1072,7 +1130,8 @@ answers:[
 "pasażerów należy poddać ukierunkowanej kontroli manualnej",
 "10–20% pasażerów należy poddać kontroli ETD"
 ],
-correct:[0,3,5]
+correct:[0,3,5],
+topic:"OTHER"
 },
 
 {
@@ -1085,7 +1144,8 @@ answers:[
 "tylko dla towarowego i pocztowego",
 "tylko dla towarowego i pasażerskiego"
 ],
-correct:[2]
+correct:[2],
+topic:"CARGO"
 },
 
 {
@@ -1098,7 +1158,8 @@ answers:[
 "płyny do 100 ml w torbie 1L",
 "płyny powyżej 100 ml w torbie 1L"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"OTHER"
 },
 
 {
@@ -1111,7 +1172,8 @@ answers:[
 "pałki metalowe pokryte skórą",
 "szkielet broni palnej"
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"HBS"
 },
 
 {
@@ -1124,7 +1186,8 @@ answers:[
 "do kontroli nietypowych zgrubień",
 "gdy kontrola manualna dolnej części ciała jest nieskuteczna"
 ],
-correct:[1,2,5]
+correct:[1,2,5],
+topic:"OTHER"
 },
 
 {
@@ -1137,7 +1200,8 @@ answers:[
 "zatrzymania i przekazania Policji lub SG osoby naruszającej bezpieczeństwo",
 "niedopuszczenia pasażera bez karty pokładowej"
 ],
-correct:[0,1,3,5]
+correct:[0,1,3,5],
+topic:"OTHER"
 },
 
 {
@@ -1150,7 +1214,8 @@ answers:[
 "kontrolę wzrokową",
 "wykrywanie metalu w butach"
 ],
-correct:[0,1,3,5]
+correct:[0,1,3,5],
+topic:"PERSON"
 },
 
 {
@@ -1163,7 +1228,8 @@ answers:[
 "kontrolę ETD",
 "kontrolę wykrywaczem materiałów wybuchowych w butach"
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -1178,7 +1244,8 @@ answers:[
 "DIPL",
 "GOVT"
 ],
-correct:[0,2,3,4,5,6,7]
+correct:[0,2,3,4,5,6,7],
+topic:"CARGO"
 },
 
 {
@@ -1191,7 +1258,8 @@ answers:[
 "funkcjonariusza Służby Celno-Skarbowej  podczas wykonywania czynności służbowych posiadającego jednorazową kartę identyfikacyjną portu lotniczego eskortowanego przez osobę posiadającą czasową kartę identyfikacyjną portu lotniczego",
 "pracownika ULC z czasową kartą identyfikacyjną podczas wykonywania czyności służbowych"
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic:"PERSON"
 },
 
 {
@@ -1204,7 +1272,8 @@ answers:[
 "urządzenie do prześwietlania osób niewykorzystujące promieniowania jonizującego",
 "bramkę do wykrywania metali"
 ],
-correct:[0,4,5]
+correct:[0,4,5],
+topic:"PERSON"
 },
 
 {
@@ -1217,7 +1286,8 @@ answers:[
 "noże do kartonów",
 "neutralizujące substancje chemiczne"
 ],
-correct:[0,1,5]
+correct:[0,1,5],
+topic:"PERSON"
 },
 
 {
@@ -1230,7 +1300,8 @@ answers:[
 "systemy wykrywania materiałów wybuchowych",
 "skaner osób"
 ],
-correct:[0,4]
+correct:[0,4],
+topic:"PERSON"
 },
 
 {
@@ -1243,7 +1314,8 @@ answers:[
 "systemy wykrywania materiałów wybuchowych",
 "wykrywanie metali"
 ],
-correct:[2,4]
+correct:[2,4],
+topic:"MAIL"
 },
 
 {
@@ -1256,7 +1328,8 @@ answers:[
 "są kontrolowane tylko jako bagaż rejestrowany",
 "są w miarę możliwości kontrolowane jako bagaż rejestrowany"
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -1269,7 +1342,8 @@ answers:[
 "10%",
 "7–15%"
 ],
-correct:[2]
+correct:[2],
+topic:["CBS", "HBS"]
 },
 
 {
@@ -1282,7 +1356,8 @@ answers:[
 "do kontroli płynów w RTG",
 "jeżeli brak ETD/PWMW i nie można użyć RTG/EDS"
 ],
-correct:[1,5]
+correct:[1,5],
+topic:"SUPPLY"
 },
 
 {
@@ -1295,7 +1370,8 @@ answers:[
 "ETD + HHMD",
 "urządzenie do wykrywania metali"
 ],
-correct:[0,5]
+correct:[0,5],
+topic:"MAIL"
 },
 
 {
@@ -1308,7 +1384,8 @@ answers:[
 "butów w bagażu",
 "butów na osobie"
 ],
-correct:[3,5]
+correct:[3,5],
+topic:"OTHER"
 },
 
 {
@@ -1321,7 +1398,8 @@ answers:[
 "można poddać kontroli wykrywaczem metali",
 "można poddać kontroli systemem wykrywania płynów"
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -1334,7 +1412,8 @@ answers:[
 "nie stosuje się wykrywacza metali",
 "stosuje się skuteczne metody wykrywania"
 ],
-correct:[0,3,5]
+correct:[0,3,5],
+topic:"CARGO"
 },
 
 {
@@ -1347,7 +1426,8 @@ answers:[
 "ładunek i pocztę transferową",
 "próbki biomedyczne, które mogłyby zostać uszkodzone w przypadku poddania ich kontroli bezpieczeństwa, pod warunkiem, że pochodzą z wiarygodnego źródła i towarzyszy im odpowiednia dokumentacja"
 ],
-correct:[1,2,3,4,5]
+correct:[1,2,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -1360,7 +1440,8 @@ answers:[
 "z zewnętrznych i wewnętrznych spojeń",
 "tylko z zewnętrznych spojeń"
 ],
-correct:[1,2,4]
+correct:[1,2,4],
+topic:"CARGO"
 },
 
 {
@@ -1373,7 +1454,8 @@ answers:[
 "noże do kartonów",
 "opony samolotowe"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"SUPPLY"
 },
 
 {
@@ -1386,7 +1468,8 @@ answers:[
 "zmontowane urządzenia zapalające zgodne",
 "zmontowane urządzenia wybuchowe zgodne"
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"CARGO"
 },
 
 {
@@ -1399,7 +1482,8 @@ answers:[
 "kontrola manualna + ETD",
 "EDS + APID"
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"HBS"
 },
 
 {
@@ -1412,7 +1496,8 @@ answers:[
 "33 miesięcy",
 "36 miesięcy"
 ],
-correct:[5]
+correct:[5],
+topic:"OTHER"
 },
 
 {
@@ -1425,7 +1510,8 @@ answers:[
 "strefę ogólnodostępną",
 "strefę operacyjną"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -1437,7 +1523,8 @@ answers:[
 "kontrolę ruchu naziemnego",
 "kontrolę uprawnień"
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -1450,7 +1537,8 @@ answers:[
 "w stosunku do Prezesa Portu Lotniczego, któremu towarzyszy ochrona służb państwowych",
 "strażaka Państwowej Straży Pożarnej posiadającego legitymację służbową podczas wykonywania czynności służbowych"
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"OTHER"
 },
 
 {
@@ -1463,7 +1551,8 @@ answers:[
 "rozszerzone sprawdzenie przeszłości",
 "pozwolenie na broń"
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"OTHER"
 },
 
 {
@@ -1476,7 +1565,8 @@ answers:[
 "identyfikuje przedmioty zabronione",
 "identyfikuje materiały wybuchowe"
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 
 {
@@ -1489,7 +1579,8 @@ answers:[
 "może być wykonana przez inną płeć za zgodą",
 "powinna minimalnie naruszać intymność"
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -1502,7 +1593,8 @@ answers:[
 "przechować na lotnisku",
 "przekazać Straży Granicznej"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:["CBS", "HBS"]
 },
 
 {
@@ -1515,7 +1607,8 @@ answers:[
 "kontrola manualna",
 "wykrywanie metalu w butach"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"PERSON"
 },
 
 {
@@ -1528,7 +1621,8 @@ answers:[
 "test przy zmianie operatora",
 "metodologia testów określona przez producenta"
 ],
-correct:[0,2,5]
+correct:[0,2,5],
+topic:"OTHER"
 },
 
 {
@@ -1541,7 +1635,8 @@ answers:[
 "15 minut",
 "20 minut"
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -1554,7 +1649,8 @@ answers:[
 "płyny do 100 ml w torbie 1L",
 "płyny do 100 ml zakupione w lotnisku"
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"CBS"
 },
 
 {
@@ -1567,7 +1663,8 @@ answers:[
 "noże do kartonów",
 "celowniki teleskopowe"
 ],
-correct:[1,2,4]
+correct:[1,2,4],
+topic:"PERSON"
 }
 
 ],
@@ -1584,7 +1681,8 @@ answers:[
 "maczetę",
 "celownik teleskopowy"
 ],
-correct:[0,4]
+correct:[0,4],
+topic:"SUPPLY"
 },
 
 {
@@ -1596,7 +1694,8 @@ answers:[
 "niedopuszczenia do wjazdu pojazdu bez uprawnień",
 "zatrzymania osoby nieposiadającej wymaganych uprawnień"
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -1609,7 +1708,8 @@ answers:[
 "kontroli osób",
 "kontroli ruchu naziemnego"
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -1622,7 +1722,8 @@ answers:[
 "bagaż kabinowy funkcjonariusza SOP",
 "kwalifikowany pracownik ochrony z bronią"
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"OTHER"
 },
 
 {
@@ -1635,7 +1736,8 @@ answers:[
 "pałki paraliżujące",
 "noże do kartonów"
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"PERSON"
 },
 
 {
@@ -1647,7 +1749,8 @@ answers:[
 "odmawiającego kontroli bezpieczeństwa",
 "deportowanego"
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"PERSON"
 },
 
 {
@@ -1660,7 +1763,8 @@ answers:[
 "zapalniki",
 "dynamit"
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"HBS"
 },
 
 {
@@ -1673,7 +1777,8 @@ answers:[
 "broń pneumatyczną",
 "neutralizujące substancje chemiczne"
 ],
-correct:[0,3,5]
+correct:[0,3,5],
+topic:"CBS"
 },
 
 {
@@ -1687,7 +1792,8 @@ answers:[
 "psa do wykrywania materiałów wybuchowych",
 "ETD"
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"PERSON"
 },
 
 {
@@ -1700,7 +1806,8 @@ answers:[
 "kontrola manualna",
 "pies do wykrywania materiałów wybuchowych"
 ],
-correct:[0,2,5]
+correct:[0,2,5],
+topic:"PERSON"
 },
 
 {
@@ -1713,7 +1820,8 @@ answers:[
 "zniszczyć w specjalnym pojemniku",
 "umieścić w bagażu rejestrowanym przy odprawie"
 ],
-correct:[1,3,4,5]
+correct:[1,3,4,5],
+topic:"CBS"
 },
 
 {
@@ -1726,7 +1834,8 @@ answers:[
 "noże 5 cm",
 "śrubokręty 7 cm"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"SUPPLY"
 },
 
 {
@@ -1739,7 +1848,8 @@ answers:[
 "urządzenie rentgenowskie",
 "wykrywanie materiałów wybuchowych w butach"
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"CBS"
 },
 
 {
@@ -1752,7 +1862,8 @@ answers:[
 "z dłoni",
 "tylko z wnętrza bagażu"
 ],
-correct:[0]
+correct:[0],
+topic:"HBS"
 },
 
 {
@@ -1765,7 +1876,8 @@ answers:[
 "identyfikuje zagrożenia",
 "projekcja wirtualnych obrazów zagrożeń"
 ],
-correct:[0,5]
+correct:[0,5],
+topic:"OTHER"
 },
 
 {
@@ -1778,7 +1890,8 @@ answers:[
 "Straż Graniczna",
 "Służba Ochrony Lotniska"
 ],
-correct:[4]
+correct:[4],
+topic:"OTHER"
 },
 
 {
@@ -1791,7 +1904,8 @@ answers:[
 "ETD + HHMD",
 "systemy wykrywania materiałów wybuchowych"
 ],
-correct:[0,3,5]
+correct:[0,3,5],
+topic:"CBS"
 },
 
 {
@@ -1804,7 +1918,8 @@ answers:[
 "kontrola wzrokowa",
 "pies"
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"CBS"
 },
 
 {
@@ -1817,7 +1932,8 @@ answers:[
 "tonfy",
 "płyny dezynfekcyjne"
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"PERSON"
 },
 
 {
@@ -1830,7 +1946,8 @@ answers:[
 "EDS",
 "wykrywanie metalu"
 ],
-correct:[2,4,5]
+correct:[2,4,5],
+topic:"CARGO"
 },
 
 {
@@ -1843,7 +1960,8 @@ answers:[
 "członków delegacji",
 "funkcjonariusza urzędu skarbowego"
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 
 {
@@ -1856,7 +1974,8 @@ answers:[
 "HHMD",
 "kontrola manualna"
 ],
-correct:[0,1,5]
+correct:[0,1,5],
+topic:"PERSON"
 },
 
 {
@@ -1869,7 +1988,8 @@ answers:[
 "poczta <2 kg",
 "ładunek transferowy"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -1882,7 +2002,8 @@ answers:[
 "data wydania",
 "godzina ważności"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"OTHER"
 },
 
 {
@@ -1895,7 +2016,8 @@ answers:[
 "posiada jednorazową kartę",
 "posiada kartę organu krajowego"
 ],
-correct:[0,2,5]
+correct:[0,2,5],
+topic:"OTHER"
 },
 
 {
@@ -1908,7 +2030,8 @@ answers:[
 "SMUS",
 "TRNS"
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"CARGO"
 },
 
 {
@@ -1921,7 +2044,8 @@ answers:[
 "PESEL",
 "numer przepustki"
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"OTHER"
 },
 
 {
@@ -1933,7 +2057,8 @@ answers:[
 "kontrola wzrokowa",
 "system wykrywania urządzeń wybuchowych"
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -1946,7 +2071,8 @@ answers:[
 "kanapkę z płynną czekoladą",
 "galaretkę"
 ],
-correct:[1,2,3,5]
+correct:[1,2,3,5],
+topic:"OTHER"
 },
 
 {
@@ -1958,7 +2084,8 @@ answers:[
 "ładunek przewożony statkiem powietrznym",
 "korespondencję"
 ],
-correct:[0]
+correct:[0],
+topic:"SUPPLY"
 },
 
 {
@@ -1971,7 +2098,8 @@ answers:[
 "jest bagażem krytycznym",
 "jest prawidłowo zabezpieczony"
 ],
-correct:[0,5]
+correct:[0,5],
+topic:"OTHER"
 },
 
 {
@@ -1984,7 +2112,8 @@ answers:[
 "amunicja",
 "spłonki"
 ],
-correct:[2,4,5]
+correct:[2,4,5],
+topic:"HBS"
 },
 
 {
@@ -1997,7 +2126,8 @@ answers:[
 "system wykrywania materiałów wybuchowych",
 "wykrywanie materiałów wybuchowych w butach"
 ],
-correct:[5]
+correct:[5],
+topic:"PERSON"
 },
 
 {
@@ -2010,7 +2140,8 @@ answers:[
 "zewnętrznych i wewnętrznych spojeń",
 "2 powierzchni spod opakowania"
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"CARGO"
 },
 
 {
@@ -2023,7 +2154,8 @@ answers:[
 "ETD + wykrywanie metalu w butach",
 "skaner osób"
 ],
-correct:[0,1,3]
+correct:[0,1,3],
+topic:"PERSON"
 },
 
 {
@@ -2035,7 +2167,8 @@ answers:[
 "czy torba jest zamknięta",
 "miejsce zakupu"
 ],
-correct:[0,1,2,3,4]
+correct:[0,1,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -2048,7 +2181,8 @@ answers:[
 "10–20% kontrola HHMD",
 "10–20% kontrola ETD"
 ],
-correct:[0,1,5]
+correct:[0,1,5],
+topic:"OTHER"
 },
 
 {
@@ -2061,7 +2195,8 @@ answers:[
 "płyny dla dzieci",
 "płyny zdrowotne"
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -2074,7 +2209,8 @@ answers:[
 "ostatnio dotykanego przedmiotu",
 "dłoni"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"PERSON"
 },
 
 {
@@ -2087,7 +2223,8 @@ answers:[
 "kontrola manualna",
 "skaner osób"
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"OTHER"
 }
 
 ],
@@ -2103,7 +2240,8 @@ answers:[
 "naboje dymne",
 "kij baseballowy"
 ],
-correct:[3,4,5]
+correct:[3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2115,7 +2253,8 @@ answers:[
 "zatrzymania osoby nieposiadającej wymaganych uprawnień",
 "wykorzystania psów do wykrywania substancji"
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -2128,7 +2267,8 @@ answers:[
 "kontrola manualna jest nieskuteczna",
 "kontrola wzrokowa jest nieskuteczna"
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 
 {
@@ -2141,7 +2281,8 @@ answers:[
 "ambasadora przewożącego pocztę dyplomatyczną",
 "pracownika SOL z bronią"
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"OTHER"
 },
 
 {
@@ -2154,7 +2295,8 @@ answers:[
 "zapalniki",
 "substancje zapalające"
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -2166,7 +2308,8 @@ answers:[
 "Służba Ochrony Lotniska",
 "Żandarmeria Wojskowa"
 ],
-correct:[0,1,3]
+correct:[0,1,3],
+topic:"OTHER"
 },
 
 {
@@ -2179,7 +2322,8 @@ answers:[
 "ochrony stref zastrzeżonych lotniska",
 "czynności zabezpieczenia technicznego"
 ],
-correct:[0,1,2,4,5]
+correct:[0,1,2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2192,7 +2336,8 @@ answers:[
 "gazy obronne",
 "pałki metalowe pokryte skórą"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"CBS"
 },
 
 {
@@ -2205,7 +2350,8 @@ answers:[
 "wykrywanie metalu w butach",
 "ETD"
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"PERSON"
 },
 
 {
@@ -2218,7 +2364,8 @@ answers:[
 "kontrolę manualną",
 "bramkę do wykrywania metali"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"PERSON"
 },
 {
 question:"11. Urządzenia rentgenowskie posiadają następujące funkcje wzmacniania obrazu prezentowanego na ekranie:",
@@ -2230,7 +2377,8 @@ answers:[
 "inwersja sygnału wideo, tak aby umożliwić wyświetlanie obrazu monochromatycznego, na którym biel wyświetla się jako czerń, a czerń wyświetla się jako biel;",
 "wzmacnianie krawędzi."
 ],
-correct:[1,2,4,5]
+correct:[1,2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2243,7 +2391,8 @@ answers:[
 "bezprzewodowe przenośne wiertarki elektryczne;",
 "neutralizujące i obezwładniające aerozole."
 ],
-correct:[2,5]
+correct:[2,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2256,7 +2405,8 @@ answers:[
 "kontrolę manualną;",
 "ESD."
 ],
-correct:[0,3,4]
+correct:[0,3,4],
+topic:"MAIL"
 },
 
 {
@@ -2269,7 +2419,8 @@ answers:[
 "z wierzchu i spodu dłoni oraz z zapięcia butów znajdujących się w bagażu kabinowym pasażera;",
 "z wierzchu i spodu dłoni oraz z zewnętrznej i wewnętrznej strony obwodu na wysokości pasa."
 ],
-correct:[3]
+correct:[3],
+topic:"PERSON"
 },
 
 {
@@ -2282,11 +2433,12 @@ answers:[
 "zaopatrzenie portu lotniczego;",
 "zaopatrzenie przewoźnika lotniczego;"
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
-question:"16. Osoba zamierzająca przewieźć broń gazową poza granice kraju jest zobowiązana w celu zadeklarowania tego faktu zwrócić się na lotnisku wylotu do:",
+question:"16. Osoba zamierzająca przewieźć broń palną poza granice kraju jest zobowiązana w celu zadeklarowania tego faktu zwrócić się na lotnisku wylotu do:",
 answers:[
 "przedstawiciela przewoźnika lotniczego, którego samolotem będzie przewożona broń;",
 "Służby Ochrony Lotniska,",
@@ -2295,7 +2447,8 @@ answers:[
 "Specjalistycznej Uzbrojonej Formacji Ochronnej;",
 "Straży Granicznej."
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -2308,7 +2461,8 @@ answers:[
 "system do wykrywania urządzeń wybuchowych;",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznym wykrywaczem metali."
 ],
-correct:[0,3,4]
+correct:[0,3,4],
+topic:"MAIL"
 },
 
 {
@@ -2321,7 +2475,8 @@ answers:[
 "systemy do wykrywania materiałów wybuchowych;",
 "detektor metalu;"
 ],
-correct:[0]
+correct:[0],
+topic:"PERSON"
 },
 
 {
@@ -2334,7 +2489,8 @@ answers:[
 "urządzenie EDS;",
 "psa do wykrywana materiałów wybuchowych w połączeniu z kontrolą manualną."
 ],
-correct:[0,4]
+correct:[0,4],
+topic:"MAIL"
 },
 
 {
@@ -2347,7 +2503,8 @@ answers:[
 "kajdanki;",
 "płyny do dezynfekcji o stężeniu alkoholu poniżej 70%."
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"SUPPLY"
 },
 {
 question:"21. Ze sprawdzenia będą zwolnione lub nie będą podlegały pojazdy:",
@@ -2359,7 +2516,8 @@ answers:[
 "lotniskowej służby ratowniczo - gaśniczej;",
 "funkcjonariuszy Straży Granicznej w trakcje wykonywania czynności służbowych."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -2372,7 +2530,8 @@ answers:[
 "ponownej kontroli z wykorzystaniem urządzenia do prześwietlania osób po usunięciu przez nią kolejnych przedmiotów generujących alarm.",
 "poddaje się kontroli z wykorzystaniem bramki do wykrywania metali."
 ],
-correct:[1,3,4]
+correct:[1,3,4],
+topic:"PERSON"
 },
 
 {
@@ -2385,7 +2544,8 @@ answers:[
 "materiały jądrowe, pod warunkiem, że są one zabezpieczone zgodnie z postanowieniami Konwencji Haskiej o ochronie fizycznej materiałów jądrowych;",
 "próbki biomedyczne, które mogłyby zostać uszkodzone w przypadku poddania ich kontroli bezpieczeństwa, pod warunkiem, że pochodzą z wiarygodnego źródła i towarzyszy im odpowiednia dokumentacja."
 ],
-correct:[0,1,2,3,5]
+correct:[0,1,2,3,5],
+topic:"CARGO"
 },
 
 {
@@ -2398,7 +2558,8 @@ answers:[
 "słowo „cabin crew” w języku angielskim;",
 "numer karty identyfikacyjnej."
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -2411,7 +2572,8 @@ answers:[
 "funkcjonariusz Policji posiadający legitymację służbową w trakcie wykonywania czynności służbowych;",
 "funkcjonariusz Służby Celno-Skarbowej posiadający legitymację służbową w trakcie wykonywania czynności służbowych."
 ],
-correct:[0,1,3]
+correct:[0,1,3],
+topic:"OTHER"
 },
 
 {
@@ -2424,7 +2586,8 @@ answers:[
 "SMUS - przesyłki łączone składające się wyłącznie z przesyłek, gdzie grubość każdej z nich jest mniejsza niż 6 cm, a całkowity ciężar każdej z nich jest mniejszy niż 250 g;",
 "DIPL - bagaż dyplomatyczny."
 ],
-correct:[3,5]
+correct:[3,5],
+topic:"CARGO"
 },
 
 {
@@ -2437,7 +2600,8 @@ answers:[
 "jest zabezpieczana przez Straż Graniczną;",
 "jest zabezpieczana przez służbę ochrony lotniska."
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"CARGO"
 },
 {
 question:"28. Do metod kontroli bezpieczeństwa zaopatrzenia pokładowego zaliczamy:",
@@ -2448,7 +2612,8 @@ answers:[
 "psy do wykrywania materiałów wybuchowych w połączeniu z kontrolą manualną;",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z kontrolą manualną."
 ],
-correct:[2]
+correct:[2],
+topic:"SUPPLY"
 },
 
 {
@@ -2460,7 +2625,8 @@ answers:[
 "kontrolę manualną;",
 "urządzenie do wykrywania materiałów wybuchowych."
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"HBS"
 },
 
 {
@@ -2473,7 +2639,8 @@ answers:[
 "torbę zabezpieczoną w sposób umożliwiający łatwe stwierdzenie jej naruszenia zgodną z wytycznymi ICAO;",
 "torbę zabezpieczoną w sposób umożliwiający łatwe stwierdzenie jej naruszenia zgodną z wytycznymi UE;"
 ],
-correct:[4]
+correct:[4],
+topic:"OTHER"
 },
 
 {
@@ -2486,7 +2653,8 @@ answers:[
 "nie jest pozostawione bez nadzoru, a dostęp do niego jest ograniczony do osób zaangażowanych w ochronę i ładowanie zaopatrzenia pokładowego na pokład statku powietrznego;",
 "zostało zweryfikowane przez przewoźnika lotniczego na pokładzie którego będzie udostępniane pasażerom."
 ],
-correct:[0,4]
+correct:[0,4],
+topic:"SUPPLY"
 },
 
 {
@@ -2499,7 +2667,8 @@ answers:[
 "amunicję;",
 "paralizatory."
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"MAIL"
 },
 
 {
@@ -2512,7 +2681,8 @@ answers:[
 "system do wykrywania płynnych materiałów wybuchowych;",
 "system do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 
 {
@@ -2525,7 +2695,8 @@ answers:[
 "z zapięć butów;",
 "z dowolnego przedmiotu pasażera."
 ],
-correct:[0,1,2,4]
+correct:[0,1,2,4],
+topic:"PERSON"
 },
 
 {
@@ -2538,7 +2709,8 @@ answers:[
 "kontroli manualnej w połączeniu z urządzeniem do wykrywania metalu w butach;",
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[1,3,5]
+correct:[1,3,5],
+topic:"PERSON"
 },
 
 {
@@ -2551,7 +2723,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z kontrolą wzrokową;",
 "urządzenie do prześwietlania."
 ],
-correct:[0,1,2,3,4]
+correct:[0,1,2,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -2564,7 +2737,8 @@ answers:[
 "od 10% do 20% tak skontrolowanych pasażerów należy poddać kontroli z wykorzystaniem psa do wykrywania materiałów wybuchowych;",
 "od 10% do 20% tak skontrolowanych pasażerów należy poddać kontroli z wykorzystaniem urządzenia do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[2,4,5]
+correct:[2,4,5],
+topic:"PERSON"
 },
 
 {
@@ -2577,7 +2751,8 @@ answers:[
 "wszystkie płyny, aerozole i żele o pojemności do 100 ml lub jej równowartości umieszczone w jednej zamykanej przeźroczystej torebce plastikowej o pojemności nieprzekraczającej 1 litra, przy czym zawartość plastikowej torebki swobodnie się w niej mieści, a torebka jest dokładnie zamknięta;",
 "wszystkie płyny, aerozole i żele o pojemności powyżej 100 ml przeznaczone dla dziecka ze względu na specjalną dietę."
 ],
-correct:[1,2,3,5]
+correct:[1,2,3,5],
+topic:"OTHER"
 },
 
 {
@@ -2590,7 +2765,8 @@ answers:[
 "posiada wskaźnik wizualny sygnalizujący, że urządzenie działa;",
 "rejestruje liczbę osób poddanych kontroli bezpieczeństwa z wyłączeniem osób, które przechodzą przez WTMD w przeciwnym kierunku."
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2603,7 +2779,8 @@ answers:[
 "eskortowany przez odpowiednie służby wprowadzany jest na pokład statku powietrznego po tym jak wszyscy pasażerowie zajmą swoje miejsca;",
 "eskortowany przez odpowiednie służby wyprowadzany jest z pokładu statku powietrznego przed innymi pasażerami."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"PERSON"
 }
 
 
@@ -2619,7 +2796,8 @@ answers:[
 "naboje dymne.",
 "obezwładniające substancje chemiczne."
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2632,7 +2810,8 @@ answers:[
 "sprawdzania przedmiotów wprowadzanych do strefy zastrzeżonej lotniska.",
 "dokonywania przeszukania osoby i jej bagażu."
 ],
-correct:[1,2,3,4,5]
+correct:[1,2,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2645,7 +2824,8 @@ answers:[
 "kontrola wzrokowa jest niepożądana ze względów religijnych.",
 "PWMW jest nieskuteczna."
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 
 {
@@ -2658,7 +2838,8 @@ answers:[
 "pasażera potencjalnie uciążliwego.",
 "kwalifikowanych pracowników ochrony fizycznej zatrudnionych w Służbie Ochrony Lotniska w trakcie wykonywania czynności służbowych i posiadających czasową kartę identyfikacyjną portu lotniczego wyposażonych w paralizator."
 ],
-correct:[4,5]
+correct:[4,5],
+topic:"OTHER"
 },
 
 {
@@ -2671,7 +2852,8 @@ answers:[
 "rozpylacze kwasu.",
 "szable."
 ],
-correct:[1,2,3,4,5]
+correct:[1,2,3,4,5],
+topic:"PERSON"
 },
 
 {
@@ -2684,7 +2866,8 @@ answers:[
 "Policja.",
 "Straż Ochrony."
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2697,7 +2880,8 @@ answers:[
 "czynności zabezpieczenia technicznego.",
 "zatrzymania i przekazania Policji osoby, która bez upoważnienia uzyskała lub usiłowała uzyskać dostęp do strefy zastrzeżonej."
 ],
-correct:[0,2,3,4]
+correct:[0,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -2710,7 +2894,8 @@ answers:[
 "naboje dymne.",
 "celownik teleskopowy."
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic:"CBS"
 },
 
 {
@@ -2723,7 +2908,8 @@ answers:[
 "psa do wykrywania materiałów wybuchowych.",
 "urządzenie do wykrywania metalu w butach."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -2736,7 +2922,8 @@ answers:[
 "ręczny wykrywacz metali.",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[1,4,5]
+correct:[1,4,5],
+topic:"PERSON"
 },
 {
 question:"11. Kartę identyfikacyjną portu lotniczego zwraca się niezwłocznie podmiotowi wydającemu w następujących sytuacjach:",
@@ -2748,7 +2935,8 @@ answers:[
 "na żądanie podmiotu wydającego.",
 "w razie zmiany potrzeby dostępu do stref, w odniesieniu do których udzielono upoważnienia."
 ],
-correct:[1,3,4,5]
+correct:[1,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -2761,7 +2949,8 @@ answers:[
 "pałki metalowe pokryte skórą.",
 "urządzenia do obezwładniania."
 ],
-correct:[0,2,3,4,5]
+correct:[0,2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2774,7 +2963,8 @@ answers:[
 "urządzenie rentgenowskie.",
 "urządzenie do wykrywania metali."
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"MAIL"
 },
 
 {
@@ -2787,7 +2977,8 @@ answers:[
 "z wierzchu i spodu dłoni oraz z zapięcia butów znajdujących się w bagażu kabinowym pasażera.",
 "z wierzchu i spodu dłoni oraz paszportu przenoszonego przez pasażera."
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -2800,7 +2991,8 @@ answers:[
 "przedmioty przenoszone przez osoby niebędące pasażerami.",
 "tablety udostępniane pasażerom w trakcie lotu."
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2813,7 +3005,8 @@ answers:[
 "wykaz przedmiotów zabronionych,",
 "nazwę podmiotu wydającego."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -2826,7 +3019,8 @@ answers:[
 "systemy do wykrywania materiałów wybuchowych.",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[4,5]
+correct:[4,5],
+topic:"MAIL"
 },
 
 {
@@ -2839,7 +3033,8 @@ answers:[
 "psa do wykrywania materiałów wybuchowych.",
 "urządzenie do wykrywania metali."
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"PERSON"
 },
 
 {
@@ -2852,7 +3047,8 @@ answers:[
 "bazuki.",
 "broń kulkową."
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -2865,7 +3061,8 @@ answers:[
 "kontrolę wzrokową.",
 "urządzenie do wykrywania metalu w butach."
 ],
-correct:[0,2,4]
+correct:[0,2,4],
+topic:"MAIL"
 },
 {
 question:"21. Z kontroli dostępu zwolnione będą pojazdy:",
@@ -2877,7 +3074,8 @@ answers:[
 "członków Państwowej Komisji Badania Wypadków Lotniczych wraz ze specjalistycznym wyposażeniem tych pojazdów podczas wykonywania czynności służbowych.",
 "funkcjonariuszy Straży Granicznej w trakcje wykonywania czynności służbowych."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -2890,7 +3088,8 @@ answers:[
 "poddaje się kontroli bezpieczeństwa z wykorzystaniem bramki do wykrywania metali.",
 "kontroli z wykorzystaniem urządzenia do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -2903,7 +3102,8 @@ answers:[
 "próbki biomedyczne, które mogłyby zostać uszkodzone w przypadku poddania ich kontroli bezpieczeństwa, pod warunkiem, że pochodzą z wiarygodnego źródła i towarzyszy im odpowiednia dokumentacja.",
 "ładunek i pocztę wysokiego ryzyka określone na podstawie wspólnej unijnej oceny ryzyka."
 ],
-correct:[0,1,2,3,4]
+correct:[0,1,2,3,4],
+topic:"CARGO"
 },
 
 {
@@ -2916,7 +3116,8 @@ answers:[
 "w których sortowany jest bagaż rejestrowany.",
 "w których mogą przebywać pasażerowie."
 ],
-correct:[0,1,5]
+correct:[0,1,5],
+topic:"OTHER"
 },
 
 {
@@ -2929,7 +3130,8 @@ answers:[
 "pracownika przewoźnika lotniczego „LOT” posiadający czasową kartę identyfikacyjną portu lotniczego w trakcie wykonywania czynności służbowych.",
 "funkcjonariusza Straży Granicznej posiadający legitymację służbową w trakcie wykonywania czynności służbowych."
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"OTHER"
 },
 
 {
@@ -2942,7 +3144,8 @@ answers:[
 "SHR, SPX.",
 "SXP, SHR, SCO."
 ],
-correct:[4]
+correct:[4],
+topic:"CARGO"
 },
 
 {
@@ -2955,7 +3158,8 @@ answers:[
 "pasażer nie stawił się na pokładzie statku powietrznego przed odlotem.",
 "pasażer opuścił  statek powietrzny przed odlotem."
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"HBS"
 },
 
 {
@@ -2967,7 +3171,8 @@ answers:[
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z kontrolą manualną.",
 "psy do wykrywania materiałów wybuchowych w połączeniu z kontrolą manualną."
 ],
-correct:[2]
+correct:[2],
+topic:"SUPPLY"
 },
 
 {
@@ -2980,7 +3185,8 @@ answers:[
 "systemy do wykrywania materiałów wybuchowych.",
 "urządzenie do wykrywania urządzeń wybuchowych."
 ],
-correct:[0,1,2,4]
+correct:[0,1,2,4],
+topic:"HBS"
 },
 
 {
@@ -2993,7 +3199,8 @@ answers:[
 "Straż Graniczna.",
 "Służba Celno - Skarbowa"
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 {
 question:"31. Sprzęt służący do ochrony lotnictwa cywilnego zgodnie z przepisami:",
@@ -3005,7 +3212,8 @@ answers:[
 "rozmieszcza się, instaluje i utrzymuje zgodnie z wymogami określonymi przez Urząd Lotnictwa Cywilnego.",
 "częstotliwość testowania urządzeń każdorazowo określa Urząd Lotnictwa Cywilnego w KPOLC."
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"OTHER"
 },
 
 {
@@ -3018,7 +3226,8 @@ answers:[
 "proch strzelniczy.",
 "amunicję."
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"MAIL"
 },
 
 {
@@ -3031,7 +3240,8 @@ answers:[
 "urządzenia do kontroli osób.",
 "system do wykrywania płynnych materiałów wybuchowych."
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -3044,7 +3254,8 @@ answers:[
 "z wierzchu i spodu dłoni osób i przedmiotu osobistego ostatnio dotykanego.",
 "z wierzchu i spodu dłoni osób i zapięć ich ubrań."
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"PERSON"
 },
 
 {
@@ -3057,7 +3268,8 @@ answers:[
 "kontroli manualnej w połączeniu z urządzeniem do wykrywania metalu w butach.",
 "urządzenia do prześwietlania osób niewykorzystującego promieniowania jonizującego."
 ],
-correct:[2,3,5]
+correct:[2,3,5],
+topic:"PERSON"
 },
 
 {
@@ -3070,7 +3282,8 @@ answers:[
 "kontrolę manualną.",
 "urządzenie do wykrywania oparów materiałów wybuchowych w połączeniu z kontrolą wzrokową"
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+toppic:"SUPPLY"
 },
 
 {
@@ -3083,7 +3296,8 @@ answers:[
 "od 10% do 20% tak skontrolowanych pasażerów należy poddać kontroli z wykorzystaniem psa do wykrywania materiałów wybuchowych.",
 "od 10% do 20% tak skontrolowanych pasażerów należy poddać kontroli z wykorzystaniem urządzenia do wykrywania materiałów wybuchowych w butach."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -3096,7 +3310,8 @@ answers:[
 "wszystkie płyny, aerozole i żele o pojemności powyżej 100 ml lub jej równowartości niezbędne dla pasażera podczas podróży ze względów zdrowotnych.",
 "wszystkie płyny, aerozole i żele o pojemności poniżej 100 ml lub jej równowartości zakupione w porcie lotniczym lub na pokładzie statku powietrznego szczelnie zamknięte w torbę zabezpieczoną w sposób umożliwiający łatwe stwierdzenie jej naruszenia, w której w sposób widoczny jest umieszczony dowód zakupu w strefie operacyjnej lotniska lub na pokładzie samolotu."
 ],
-correct:[5]
+correct:[5],
+topic:"OTHER"
 },
 
 {
@@ -3109,7 +3324,8 @@ answers:[
 "rejestruje liczbę uruchomionych alarmów jako odsetek liczby osób poddanych kontroli bezpieczeństwa.",
 "stosowana do kontroli osób niebędących pasażerami musi spełniać normę 1."
 ],
-correct:[0,1,2,4,5]
+correct:[0,1,2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -3122,7 +3338,8 @@ answers:[
 "Straż Graniczna sprawdza w wyznaczonym do tego miejscu, czy przewożona broń jest rozładowana i zabezpieczona oraz czy amunicja jest zapakowana w sposób uniemożliwiający uderzenie w spłonkę naboju.",
 "przewoźnik lotniczy informuje Służbę Celno - Skarbową na lotnisku wylotu o fakcie przewozu broni palnej."
 ],
-correct:[1,2,4]
+correct:[1,2,4],
+topic:"HBS"
 }
 ],
 test6: [
@@ -3135,7 +3352,8 @@ answers:[
 "pomarańczowym.",
 "fioletowym."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -3148,7 +3366,8 @@ answers:[
 "posiada certyfikat bezpieczeństwa ICAO.",
 "przybywa do strefy zastrzeżonej lotniska na pokładzie statku powietrznego."
 ],
-correct:[0,5]
+correct:[0,5],
+topic:"SUPPLY"
 },
 
 {
@@ -3160,7 +3379,8 @@ answers:[
 "5% - 10%.",
 "20% - 25%"
 ],
-correct:[1]
+correct:[1],
+topic:"PERSON"
 },
 
 {
@@ -3173,7 +3393,8 @@ answers:[
 "pasażer poddawany jest kontroli bezpieczeństwa z użyciem urządzenia do prześwietlania osób niewykorzystującego promieniowania jonizującego.",
 "pasażer poddawany jest ponownej kontroli z użyciem bramki do wykrywania metali."
 ],
-correct:[1,2,5]
+correct:[1,2,5],
+topic:"PERSON"
 },
 
 {
@@ -3186,7 +3407,8 @@ answers:[
 "kontroli manualnej przeprowadzanej zgodnie z dodatkiem 4-A.",
 "ponownej kontroli z użyciem urządzenia do prześwietlania osób po usunięciu się przez nią kolejnych przedmiotów generujących alarm."
 ],
-correct:[0,4,5]
+correct:[0,4,5],
+topic:"PERSON"
 },
 
 {
@@ -3199,7 +3421,8 @@ answers:[
 "pasażerowie potencjalnie uciążliwi.",
 "funkcjonariusze  Straży Granicznej posiadający czasową kartę identyfikacyjną portu lotniczego w trakcie wykonywania obowiązków służbowych w porcie lotniczym."
 ],
-correct:[0,5]
+correct:[0,5],
+topic:"OTHER"
 },
 
 {
@@ -3212,7 +3435,8 @@ answers:[
 "kontroli manualnej.",
 "bramki do wykrywania metali."
 ],
-correct:[0,2,3,4]
+correct:[0,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -3225,7 +3449,8 @@ answers:[
 "niedopuszczenia do strefy zastrzeżonej lotniska pasażera odmawiającego poddania się kontroli bezpieczeństwa.",
 "ujęcia osoby naruszającej warunki przewozu i przekazania jej Policji."
 ],
-correct:[1,4,5]
+correct:[1,4,5],
+topic:"OTHER"
 },
 
 {
@@ -3238,7 +3463,8 @@ answers:[
 "wiertła.",
 "pistolet na wodę, który wyglądem przypomina prawdziwą broń."
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"PERSON"
 },
 
 {
@@ -3251,7 +3477,8 @@ answers:[
 "jest na stałe przymocowana do twardego podłoża.",
 "w przypadku wykrycia przedmiotów metalowych wysyła wyłącznie optyczny sygnał alarmowy."
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"OTHER"
 },
 {
 question:"11. Do metod kontroli bezpieczeństwa osób niebędących pasażerami zaliczamy:",
@@ -3263,7 +3490,8 @@ answers:[
 "systemy do wykrywania materiałów wybuchowych",
 "urządzenie do wykrywania metali."
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"PERSON"
 },
 
 {
@@ -3276,7 +3504,8 @@ answers:[
 "zmontowane urządzenia zapalające, które nie są przewożone zgodnie z mającymi zastosowanie zasadami bezpieczeństwa.",
 "amunicję."
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"CARGO"
 },
 
 {
@@ -3289,7 +3518,8 @@ answers:[
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznym wykrywaczem metali.",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[0,2,5]
+correct:[0,2,5],
+topic:"CBS"
 },
 
 {
@@ -3302,7 +3532,8 @@ answers:[
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych.",
 "urządzenie EDS."
 ],
-correct:[0,1,2,3,4,5]
+correct:[0,1,2,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -3315,7 +3546,8 @@ answers:[
 "ETD + HHMD.",
 "urządzenie do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[0,2,3,5]
+correct:[0,2,3,5],
+topic:"MAIL"
 },
 
 {
@@ -3328,7 +3560,8 @@ answers:[
 "przesyłki łączone składające się wyłącznie z przesyłek, których grubość nie przekracza 6 mm, a ciężar jest mniejszy niż 250 g.",
 "duże zwierzę np. słoń."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:"OTHER"
 },
 
 {
@@ -3340,7 +3573,8 @@ answers:[
 "przedmiotu osobistego dotykanego ostatnio przez daną osobę (np. portfel, paszport, telefon).",
 "z wierzchu butów lub zapięć butów, które dana osoba ma na sobie."
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"PERSON"
 },
 
 {
@@ -3353,7 +3587,8 @@ answers:[
 "zgłoszone przez właściwy organ jako stanowiące zagrożenie dla ochrony lotnictwa.",
 "które wyglądają na poddane znacznej ingerencji w stopniu, który mógłby umożliwiać umieszczenie w nich przedmiotu zabronionego, lub wydają się w inny sposób podejrzane."
 ],
-correct:[1,2,4,5]
+correct:[1,2,4,5],
+topic:"CARGO"
 },
 
 {
@@ -3366,7 +3601,8 @@ answers:[
 "śrubokręty o długości trzonka 7 cm.",
 "kajdanki."
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"CBS"
 },
 
 {
@@ -3378,7 +3614,8 @@ answers:[
 "części zewnętrznych bagażu, które są często dotykane, takich jak zamki błyskawiczne, rączki i zatrzaski.",
 "przedmiotu osobistego, dotykanego ostatnio przez daną osobę (np. portfel, paszport, telefon)."
 ],
-correct:[2,4]
+correct:[2,4],
+topic:"CBS"
 },
 {
 question:"21. Do metod kontroli bezpieczeństwa materiałów i poczty przewoźnika lotniczego, które będą załadowane do jakiejkolwiek części statku powietrznego innej niż luk bagażowy, zaliczamy:",
@@ -3390,7 +3627,8 @@ answers:[
 "systemy wykrywania materiałów wybuchowych.",
 "kontrolę manualną."
 ],
-correct:[4,5]
+correct:[4,5],
+topic:"MAIL"
 },
 
 {
@@ -3403,7 +3641,8 @@ answers:[
 "urządzenie rentgenowskie.",
 "systemy wykrywania materiałów wybuchowych."
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"HBS"
 },
 
 {
@@ -3415,7 +3654,8 @@ answers:[
 "przewóz bezpieczny dla pasażerskiego, towarowego i pocztowego statku powietrznego.",
 "przewóz bezpieczny tylko dla towarowego i pocztowego statku powietrznego."
 ],
-correct:[3]
+correct:[3],
+topic:"CARGO"
 },
 
 {
@@ -3427,7 +3667,8 @@ answers:[
 "przechowane na lotnisku za opłatą, w przeznaczonym do tego celu pomieszczeniu, do czasu zgłoszenia się po ich odbiór pasażera.",
 "wniesione na pokład samolotu po dokonaniu dodatkowej opłaty zgodnie z cennikiem przewoźnika lotniczego."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:["CBS", "HBS"]
 },
 
 {
@@ -3440,7 +3681,8 @@ answers:[
 "substancje zapalające.",
 "dynamit."
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"HBS"
 },
 
 {
@@ -3452,7 +3694,8 @@ answers:[
 "przewóz bezpieczny dla pasażerskiego, towarowego i pocztowego statku powietrznego zgodnie z wymogami wysokiego ryzyka.",
 "przewóz próbek biomedycznych przewożonych na specjalnych warunkach."
 ],
-correct:[4]
+correct:[4],
+topic:"CARGO"
 },
 
 {
@@ -3465,7 +3708,8 @@ answers:[
 "rękawice robocze.",
 "komputery."
 ],
-correct:[0,1,2,3,4]
+correct:[0,1,2,3,4],
+topic:"MAIL"
 },
 
 {
@@ -3478,7 +3722,8 @@ answers:[
 "sprzęt militarny.",
 "materiały jądrowe."
 ],
-correct:[0,2,5]
+correct:[0,2,5],
+topipc:"OTHER"
 },
 
 {
@@ -3490,7 +3735,8 @@ answers:[
 "ketchup.",
 "tabliczkę czekolady."
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -3503,7 +3749,8 @@ answers:[
 "otrzymany od zarejestrowanego agenta.",
 "wybrany przez zarejestrowanego nadawcę."
 ],
-correct:[2]
+correct:[2],
+topic:"CARGO"
 },
 
 {
@@ -3515,7 +3762,8 @@ answers:[
 "Służba Ochrony Lotniska.",
 "Policja."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -3528,7 +3776,8 @@ answers:[
 "paralizator.",
 "zabawkę w kształcie broni, którą można pomylić z prawdziwą bronią."
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"PERSON"
 },
 
 {
@@ -3541,7 +3790,8 @@ answers:[
 "urządzenia wystrzeliwujące pociski.",
 "amunicję."
 ],
-correct:[0,2,3,4,5]
+correct:[0,2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -3553,7 +3803,8 @@ answers:[
 "na prośbę pasażera.",
 "do skontrolowania pasażerki w długiej sukni."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"PERSON"
 },
 
 {
@@ -3565,7 +3816,8 @@ answers:[
 "nie może posiadać bagażu kabinowego.",
 "jest zwolniony z kontroli bezpieczeństwa."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -3577,7 +3829,8 @@ answers:[
 "w sytuacji wydania pozytywnej opinii przez Zarządzającego Lotniskiem.",
 "nie jest dopuszczalna w stosunku do kontroli zaopatrzenia portu lotniczego"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"SUPPLY"
 },
 
 {
@@ -3590,7 +3843,8 @@ answers:[
 "maska przeciwgazowa.",
 "fajerwerki."
 ],
-correct:[0,1,3,5]
+correct:[0,1,3,5],
+topic:"SUPPLY"
 },
 
 {
@@ -3602,7 +3856,8 @@ answers:[
 "według zasad określonych przez producenta urządzenia rentgenowskiego.",
 "gdy OKB błędnie zareagował na projekcję wirtualnych obrazów zagrożeń."
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"OTHER"
 },
 
 {
@@ -3614,7 +3869,8 @@ answers:[
 "2.",
 "3."
 ],
-correct:[4]
+correct:[4],
+topic:"OTHER"
 },
 
 {
@@ -3626,7 +3882,8 @@ answers:[
 "każdy płyn, aerozol i żel przeznaczony dla dziecka.",
 "wszystkie płyny o pojemności powyżej 100 ml."
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"PERSON"
 }
 ],
 test7: [
@@ -3639,7 +3896,8 @@ answers:[
 "pasażerowi wnoszącemu przedmioty zabronione towarzyszy uzbrojona eskorta;",
 "spełnione są mające zastosowanie zasady ochrony lotnictwa."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:"PERSON"
 },
 
 {
@@ -3652,7 +3910,8 @@ answers:[
 "nie zastępuje wymogów kontroli manualnej;",
 "stosowany jest wyłącznie do kontroli bezpieczeństwa osób z ograniczoną możliwością poruszania się."
 ],
-correct:[2,4]
+correct:[2,4],
+topic:"PERSON"
 },
 
 {
@@ -3665,7 +3924,8 @@ answers:[
 "członków delegacji oficjalnych, wymienionych na potwierdzonych listach zaproszonych gości, składających wizyty na zaproszenie Wicemarszałka Sejmu",
 "członków delegacji oficjalnych, wymienionych na potwierdzonych listach zaproszonych gości, składających wizyty na zaproszenie Ministra Sportu"
 ],
-correct:[0,3,5]
+correct:[0,3,5],
+topic:"PERSON"
 },
 
 {
@@ -3678,7 +3938,8 @@ answers:[
 "urządzenia do prześwietlania osób niewykorzystującego promieniowania jonizującego",
 "ETD w połączeniu z HHMD"
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"PERSON"
 },
 
 {
@@ -3691,7 +3952,8 @@ answers:[
 "poddaje się w miarę możliwości kontroli bezpieczeństwa jak pasażera;",
 "poddaje się w miarę możliwości kontroli bezpieczeństwa jako bagaż rejestrowany;"
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 
 {
@@ -3704,7 +3966,8 @@ answers:[
 "pracownicy i funkcjonariusze Agencji Bezpieczeństwa Wewnętrznego i żołnierze wyznaczeni na stanowisko służbowe w Służbie Wywiadu Wojskowego posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku.",
 "pracownicy Straży Granicznej posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku."
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 
 {
@@ -3717,7 +3980,8 @@ answers:[
 "jednorazową kartę identyfikacyjną portu lotniczego;",
 "kartę identyfikacyjną członka załogi;"
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"OTHER"
 },
 
 {
@@ -3730,7 +3994,8 @@ answers:[
 "oznaczenia stref, do których funkcjonariusz ma dostęp.",
 "zabezpieczenie przed przerobieniem;"
 ],
-correct:[3,4,5]
+correct:[3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -3742,7 +4007,8 @@ answers:[
 "w przypadku gdy pracownik udaje się na zwolnienie lekarskie trwające powyżej 14 dni;",
 "w razie zmiany potrzeby dostępu do stref, w odniesieniu do których udzielono upoważnienia."
 ],
-correct:[1,2,4]
+correct:[1,2,4],
+topic:"OTHER"
 },
 
 {
@@ -3755,7 +4021,8 @@ answers:[
 "psa do wykrywania materiałów wybuchowych;",
 "urządzenie do wykrywania oparów materiałów wybuchowych;"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"PERSON"
 },
 {
 question:"11. Kartę identyfikacyjną portu lotniczego nosi się w widocznym miejscu przynajmniej wówczas:",
@@ -3766,7 +4033,8 @@ answers:[
 "gdy jej posiadacz znajduje się w strefach zastrzeżonych lotniska.",
 "gdy jej posiadacz znajduje się w strefach operacyjnych lotniska."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -3779,7 +4047,8 @@ answers:[
 "są fizycznie zabezpieczone w sposób zapobiegający wprowadzeniu do nich przedmiotu zabronionego",
 "nie są pozostawione bez nadzoru, a dostęp do nich mają wyłącznie osoby zaangażowane w zabezpieczanie ładunku i poczty oraz załadowywanie ich na statek powietrzny;"
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -3792,7 +4061,8 @@ answers:[
 "urządzenia do wykrywania metali.",
 "urządzenie do wykrywania oparów materiałów wybuchowych"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -3805,7 +4075,8 @@ answers:[
 "wykrywacze metali.",
 "EDS w połączeniu z APID"
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"HBS"
 },
 
 {
@@ -3817,7 +4088,8 @@ answers:[
 "punkcie 6.0.2 Rozporządzenia Wykonawczego Komisji (UE) 2015/1998.",
 "Dodatku 4-C Rozporządzenia Wykonawczego Komisji (UE) 2015/1998."
 ],
-correct:[3]
+correct:[3],
+topic:"CARGO"
 },
 
 {
@@ -3829,7 +4101,8 @@ answers:[
 "narzędzia z ostrzem lub trzonkiem o długości powyżej 6 cm, nadające się do użycia jako broń, takie jak śrubokręty i dłuta;",
 "urządzenia do porażania, takie jak paralizatory, tasery i pałki paraliżujące."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"HBS"
 },
 
 {
@@ -3841,7 +4114,8 @@ answers:[
 "umieszczone przez pasażera w bagażu rejestrowanym podczas trwania odprawy biletowo – bagażowej.",
 "oznakowane przez przewoźnika lotniczego jako bagaż rejestrowany i skierowane do luku bagażowego w trakcie kontroli bezpieczeństwa pasażerów i bagażu kabinowego;"
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic: "HBS"
 },
 
 {
@@ -3854,7 +4128,8 @@ answers:[
 "strzały do łuków.",
 "ładowarki do telefonów komórkowych;"
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic:"PERSON"
 },
 
 {
@@ -3867,7 +4142,8 @@ answers:[
 "urządzenia do wykrywania metali.",
 "psa do wykrywania materiałów wybuchowych w połączeniu z kontrolą wzrokową;"
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"CBS"
 },
 
 {
@@ -3879,7 +4155,8 @@ answers:[
 "tylko  w  przypadku,  gdy  operator  kontroli  bezpieczeństwa   uzna  kontrolę   manualną  za niepożądaną;",
 "do kontroli opatrunków gipsowych;"
 ],
-correct:[1,3,4]
+correct:[1,3,4],
+topic:"PERSON"
 },
 {
 question:"21. Na lotniskach, na których  nie funkcjonują lotnicze  przejścia graniczne, formalności związane z przewozem broni i amunicji statkiem powietrznym dokonuje:",
@@ -3891,7 +4168,8 @@ answers:[
 "Straż Graniczny;",
 "Zarządzający lotniskiem;"
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -3903,7 +4181,8 @@ answers:[
 "jest w stanie wykryć przedmioty z tworzyw sztucznych;",
 "posiada wskaźnik wizualny sygnalizujący, że urządzenie funkcjonuje."
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"OTHER"
 },
 
 {
@@ -3915,7 +4194,8 @@ answers:[
 "Za zgodą kontrolowanej osoby",
 "przeprowadzana przez pracownika służby ochrony lotniska odmiennej płci niż kontrolowana osoba."
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -3928,7 +4208,8 @@ answers:[
 "niedopuszczenia do wejścia na obszar lub do obiektu podlegających ochronie osoby nieposiadającej wymaganych uprawnień;",
 "wykorzystania psów do wykrywania przedmiotów lub substancji, które mogą stanowić przedmiot niebezpieczny;"
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"OTHER"
 },
 
 {
@@ -3941,7 +4222,8 @@ answers:[
 "która ukończyła 21 lat;",
 "uzyskała standardowe sprawdzenie przeszłości."
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -3954,7 +4236,8 @@ answers:[
 "posiada wskaźnik wizualny sygnalizujący, że urządzenie działa;",
 "W przypadku wykrycia przedmiotów metalowych, WTMD wysyła zarówno sygnał optyczny, jak i dźwiękowy."
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"OTHER"
 },
 
 {
@@ -3966,7 +4249,8 @@ answers:[
 "zawsze  przewidują   wykorzystanie   psów   do   wykrywania   materiałów   wybuchowych w powiązaniu z systemami wykrywania materiałów wybuchowych.",
 "zawsze  przewidują   wykorzystanie   kontroli wzrokowej;"
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"SUPPLY"
 },
 
 {
@@ -3979,7 +4263,8 @@ answers:[
 "pistolety sygnałowe;",
 "rozpylacze kwasu;"
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -3992,7 +4277,8 @@ answers:[
 "urządzenie do wykrywania oparów materiałów wybuchowych;",
 "EDS w połączeniu z APID;"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"MAIL"
 },
 
 {
@@ -4005,7 +4291,8 @@ answers:[
 "urządzenia  do  wykrywania  śladowych  ilości  materiałów  wybuchowych   w połączeniu  z kontrolą wzrokową.",
 "kontrolę wzrokową;"
 ],
-correct:[2,4,5]
+correct:[2,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4018,7 +4305,8 @@ answers:[
 "tasery.",
 "kajdanki;"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4031,7 +4319,8 @@ answers:[
 "urządzenie do wykrywania oparów materiałów wybuchowych;",
 "urządzenie do wykrywania metali;"
 ],
-correct:[3]
+correct:[3],
+topic:"MAIL"
 },
 
 {
@@ -4043,7 +4332,8 @@ answers:[
 "urządzenia  do  wykrywania  śladowych  ilości  materiałów  wybuchowych   w połączeniu  z kontrolą wzrokową;",
 "urządzenia rentgenowskie."
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -4056,7 +4346,8 @@ answers:[
 "rozpylacze kwasu.",
 "strzały;"
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4068,7 +4359,8 @@ answers:[
 "„SPX” – bezpieczne tylko dla pasażerskiego i pocztowego statku powietrznego.",
 "„SXP” – bezpieczne dla pasażerskiego, towarowego i pocztowego statku powietrznego."
 ],
-correct:[1,5]
+correct:[1,5],
+topic:"CARGO"
 },
 
 {
@@ -4080,7 +4372,8 @@ answers:[
 "zarządzający portem lotniczym.",
 "Przewoźnik Lotniczy"
 ],
-correct:[0]
+correct:[0],
+topic:"CARGO"
 },
 
 {
@@ -4091,7 +4384,8 @@ answers:[
 "zabawki w kształcie broni, repliki i imitacje broni palnej, które można pomylić z prawdziwą bronią;",
 "zmontowane  urządzenia  wybuchowe  i  zapalające,  które  nie  są  przewożone  zgodnie  z mającymi zastosowanie zasadami bezpieczeństwa w lotnictwie cywilnym."
 ],
-correct:[3]
+correct:[3],
+topic:"CARGO"
 },
 
 {
@@ -4102,7 +4396,8 @@ answers:[
 "pozostają tam nie dłużej niż dwie godziny;",
 "tak przewiduje program ochrony przewoźnika lotniczego."
 ],
-correct:[1]
+correct:[1],
+topic:"CARGO"
 },
 
 {
@@ -4115,7 +4410,8 @@ answers:[
 "zaopatrzenia portu lotniczego",
 "zaopatrzenia pokładowego"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"MAIL"
 },
 
 {
@@ -4128,7 +4424,8 @@ answers:[
 "nożyczki o długości 6 cm;",
 "piłki tenisowe."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"MAIL"
 }
 ],
 test8: [
@@ -4139,7 +4436,8 @@ answers:[
 "w części operacyjnej lotniska;",
 "w części zastrzeżonej lotniska."
 ],
-correct:[0]
+correct:[0],
+topic:"CARGO"
 },
 
 {
@@ -4150,7 +4448,8 @@ answers:[
 "niezwłocznie dokonuje się przeszukania części, do których mogły mieć dostęp te osoby, aby upewnić się, na ile to możliwe, że nie znajdują się w nich przedmioty zabronione;",
 "wstrzymuje się odloty statków powietrznych do czasu odnalezienia tych osób."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -4161,7 +4460,8 @@ answers:[
 "ważną kartę pokładową lub jej odpowiednik;",
 "zaświadczenie od biura podróży, które organizuje podróż drogą lotniczą."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -4171,7 +4471,8 @@ answers:[
 "upewnienia się co do jej ważności;",
 "zastosowania odpowiedniej metody kontroli bezpieczeństwa w zależności od portu lotniczego, do którego odlatuje."
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 
 {
@@ -4182,7 +4483,8 @@ answers:[
 "3 lat;",
 "5 lat."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -4194,7 +4496,8 @@ answers:[
 "w momencie unieważnienia karty;",
 "w momencie wygaśnięcia ważności karty."
 ],
-correct:[0,2,3,4]
+correct:[0,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -4205,7 +4508,8 @@ answers:[
 "nazwisko i zdjęcie posiadacza;",
 "data ważności, o ile nie jest zaprogramowana elektronicznie."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:"OTHER"
 },
 
 {
@@ -4216,7 +4520,8 @@ answers:[
 "nazwisko posiadacza;",
 "strefy, do których posiadacz karty ma dostęp."
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -4227,7 +4532,8 @@ answers:[
 "zabezpieczenie przed jej podrobieniem lub przerobieniem;",
 "zdjęcie posiadacza."
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"OTHER"
 },
 
 {
@@ -4238,7 +4544,8 @@ answers:[
 "nazwa pracodawcy posiadacza;",
 "nazwisko posiadacza."
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 {
 question:"11. Czasowa karta identyfikacyjna portu lotniczego dla funkcjonariuszy Straży Granicznej, Policji, Służby Celno-Skarbowej oraz innych służb państwowych zawiera:",
@@ -4249,7 +4556,8 @@ answers:[
 "zabezpieczenie przed jej podrobieniem lub przerobieniem;",
 "zdjęcie posiadacza."
 ],
-correct:[1,2,3,4]
+correct:[1,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -4260,7 +4568,8 @@ answers:[
 "zarejestrowanego dostawcy;",
 "znanego nadawcy."
 ],
-correct:[3]
+correct:[3],
+topic:"CARGO"
 },
 
 {
@@ -4271,7 +4580,8 @@ answers:[
 "numer służbowy funkcjonariusza;",
 "oznaczenia stref, do których funkcjonariusz ma dostęp."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:"OTHER"
 },
 
 {
@@ -4283,7 +4593,8 @@ answers:[
 "odpowiednik karty pokładowej;",
 "ważną kartę identyfikacyjną członka załogi."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"OTHER"
 },
 
 {
@@ -4294,7 +4605,8 @@ answers:[
 "ważną kartę identyfikacyjną członka załogi;",
 "ważną legitymację inspektora ULC."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"OTHER"
 },
 
 {
@@ -4305,7 +4617,8 @@ answers:[
 "ważna karta identyfikacyjna portu lotniczego;",
 "ważna karta pokładowa."
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"OTHER"
 },
 
 {
@@ -4316,7 +4629,8 @@ answers:[
 "zarejestrowanego dostawcy;",
 "znanego dostawcy."
 ],
-correct:[1]
+correct:[1],
+topic:"CARGO"
 },
 
 {
@@ -4327,7 +4641,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych;",
 "urządzenia rentgenowskie."
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"OTHER"
 },
 
 {
@@ -4338,7 +4653,8 @@ answers:[
 "urządzenia do prześwietlania osób niewykorzystujące promieniowania jonizującego;",
 "urządzenia do wykrywania śladowych ilości narkotyków i środków odurzających."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"OTHER"
 },
 
 {
@@ -4349,7 +4665,8 @@ answers:[
 "urządzenia do prześwietlania osób niewykorzystujących promieniowania jonizującego;",
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznymi wykrywaczami metali."
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"OTHER"
 },
 
 {
@@ -4361,7 +4678,8 @@ answers:[
 "urządzenia do wykrywania metali (MDE);",
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznymi wykrywaczami metali."
 ],
-correct:[0,1,4]
+correct:[0,1,4],
+topic:"OTHER"
 },
 
 {
@@ -4374,7 +4692,8 @@ answers:[
 "zarządzający lotniskiem;",
 "żołnierze i funkcjonariusze Straży Granicznej, Biura Ochrony Rządu i Żandarmerii Wojskowej posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku."
 ],
-correct:[1,5]
+correct:[1,5],
+topic:"OTHER"
 },
 
 {
@@ -4386,7 +4705,8 @@ answers:[
 "osoba posiadająca certyfikat inspektora lotnictwa cywilnego wydanego przez Prezesa ULC podczas wykonywania zadań i obowiązków służbowych na lotnisku;",
 "żołnierze i funkcjonariusze Agencji Bezpieczeństwa Wewnętrznego i Służby Wywiadu Wojskowego posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku."
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"OTHER"
 },
 
 {
@@ -4396,7 +4716,8 @@ answers:[
 "psy do wykrywania materiałów wybuchowych;",
 "ręczne wykrywacze metali."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"PERSON"
 },
 
 {
@@ -4406,7 +4727,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych;",
 "urządzenia rentgenowskie."
 ],
-correct:[1,2]
+correct:[1,2],
+topic:"PERSON"
 },
 
 {
@@ -4417,7 +4739,8 @@ answers:[
 "tak przewiduje program ochrony przewoźnika lotniczego;",
 "w zabezpieczanie i ładowanie ładunku oraz poczty na pokład statku powietrznego."
 ],
-correct:[0]
+correct:[0],
+topic:"CARGO"
 },
 
 {
@@ -4427,7 +4750,8 @@ answers:[
 "stosuje się środki lub metody najbardziej skuteczne w wykrywaniu przedmiotów zabronionych, biorąc pod uwagę rodzaj przesyłki;",
 "zawsze należy zastosować co najmniej dwie metody kontroli bezpieczeństwa."
 ],
-correct:[1]
+correct:[1],
+topic:"CARGO"
 },
 
 {
@@ -4437,7 +4761,8 @@ answers:[
 "pod warunkiem, że przebywały poza częścią krytyczną strefy zastrzeżonej tylko przez chwilę;",
 "pod warunkiem, że znajdowały się pod ciągłą obserwacją upoważnionych osób, pozwalającą upewnić się, na ile to możliwe, że nie wprowadziły przedmiotów zabronionych do tych części krytycznych."
 ],
-correct:[2]
+correct:[2],
+topic:"OTHER"
 },
 
 {
@@ -4449,7 +4774,8 @@ answers:[
 "w momencie wygaśnięcia ważności karty;",
 "w razie zmiany potrzeby dostępu do stref, w odniesieniu do których udzielono upoważnienia."
 ],
-correct:[0,2,3,4]
+correct:[0,2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -4459,7 +4785,8 @@ answers:[
 "muszą oni wyjąć wszystkie przedmioty z bagażu kabinowego;",
 "muszą oni zdjąć płaszcze i kurtki, które poddawane są kontroli bezpieczeństwa jako bagaż kabinowy."
 ],
-correct:[2]
+correct:[2],
+topic:"PERSON"
 },
 {
 question:"31. Kontrolę bezpieczeństwa pasażerów przeprowadza się za pomocą:",
@@ -4470,7 +4797,8 @@ answers:[
 "urządzeń do prześwietlania osób niewykorzystujących promieniowania jonizującego;",
 "urządzeń rentgenowskich."
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"PERSON"
 },
 
 {
@@ -4482,7 +4810,8 @@ answers:[
 "psów do wykrywania materiałów wybuchowych;",
 "urządzeń do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznymi wykrywaczami metali."
 ],
-correct:[0,2,3,4]
+correct:[0,2,3,4],
+topic:"PERSON"
 },
 
 {
@@ -4494,7 +4823,8 @@ answers:[
 "w sposób uniemożliwiający fizyczne kontaktowanie się pasażerów skontrolowanych z pasażerami oczekującymi na kontrolę;",
 "w miejscu wyodrębnionym, do którego nie ma dostępu personel lotniska, z wyjątkiem pracowników służby ochrony lotniska."
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"PERSON"
 },
 
 {
@@ -4506,7 +4836,8 @@ answers:[
 "osoba posiadająca legitymację służbową wydaną przez Urząd Lotnictwa Cywilnego podczas wykonywania zadań i obowiązków służbowych na lotnisku;",
 "pracownicy i funkcjonariusze Służby Ochrony Państwa i żołnierze wyznaczeni na stanowisko służbowe w Służbie Kontrwywiadu Wojskowego posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku."
 ],
-correct:[1]
+correct:[1],
+topic:"OTHER"
 },
 
 {
@@ -4516,7 +4847,8 @@ answers:[
 "zabawki w kształcie broni, repliki i imitacje broni palnej, które można pomylić z prawdziwą bronią;",
 "zmontowane urządzenia wybuchowe i zapalające, które nie są przewożone zgodnie z mającymi zastosowanie zasadami bezpieczeństwa w lotnictwie cywilnym."
 ],
-correct:[2]
+correct:[2],
+topic:"CARGO"
 },
 
 {
@@ -4527,7 +4859,8 @@ answers:[
 "kontroli manualnej;",
 "urządzeń do wykrywania substancji narkotycznych."
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"PERSON"
 },
 
 {
@@ -4537,7 +4870,8 @@ answers:[
 "wyłącznie w przypadku awarii bramki do wykrywania metali;",
 "wyłącznie w stosunku do mężczyzn."
 ],
-correct:[0]
+correct:[0],
+topic:"PERSON"
 },
 
 {
@@ -4547,7 +4881,8 @@ answers:[
 "nie podlega ono kontroli bezpieczeństwa;",
 "podlega ono kontroli bezpieczeństwa przeprowadzonej wyłącznie przez uprawnionego weterynarza."
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 
 {
@@ -4557,7 +4892,8 @@ answers:[
 "muszą zostać włączone, aby sprawdzić czy działają;",
 "usuwa się z bagażu i poddaje kontroli bezpieczeństwa oddzielnie."
 ],
-correct:[2]
+correct:[2],
+topic:"CBS"
 },
 
 {
@@ -4569,7 +4905,8 @@ answers:[
 "psy do wykrywania materiałów wybuchowych w połączeniu z kontrolą manualną;",
 "ręczne wykrywacze metali."
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"CBS"
 }
 ],
 test9: [
@@ -4583,7 +4920,8 @@ answers:[
 "wzierniki endoskopowe;",
 "urządzenie do wyrkywania oparów materiałów wybuchowych;"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"CBS"
 },
 
 {
@@ -4594,7 +4932,8 @@ answers:[
 "poddaniu bagażu 12-godzinnej kwarantannie;",
 "wyłącznie zewnętrznych oględzinach bagażu bez ingerencji do jego wnętrza;"
 ],
-correct:[0]
+correct:[0],
+topic:"CBS"
 },
 
 {
@@ -4606,7 +4945,8 @@ answers:[
 "żołnierzy Żandarmerii Wojskowej zapewniających ochronę ministrowi obrony narodowej.",
 "Wiceprezesa rady Ministrów;"
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"CBS"
 },
 
 {
@@ -4617,7 +4957,8 @@ answers:[
 "obowiązkowo do kontroli tego bagażu należy wykorzystać urządzenie do wykrywania śladowych ilości materiałów wybuchowych;",
 "wyjmuje się je z bagażu i bagaż poddaje się ponownej kontroli bezpieczeństwa, a urządzenie elektryczne podlega oddzielnej kontroli bezpieczeństwa."
 ],
-correct:[3]
+correct:[3],
+topic:"CBS"
 },
 
 {
@@ -4630,7 +4971,8 @@ answers:[
 "wyposażenie wykorzystywane do sztuk walki z ostrym zakończeniem lub ostrą krawędzią;",
 "zabawki w kształcie broni."
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"PERSON"
 },
 
 {
@@ -4643,7 +4985,8 @@ answers:[
 "pistolety startowe;",
 "urządzenia do nawigacji samochodowej."
 ],
-correct:[0,1,2,4]
+correct:[0,1,2,4],
+topic:"PERSON"
 },
 
 {
@@ -4656,7 +4999,8 @@ answers:[
 "strzały do łuków;",
 "tasaki kuchenne;"
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"PERSON"
 },
 
 {
@@ -4669,7 +5013,8 @@ answers:[
 "pałki policyjne;",
 "szpikulce do lodu;"
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"PERSON"
 },
 
 {
@@ -4682,7 +5027,8 @@ answers:[
 "urządzenia ETD w połączeniu z kontrolą manualną.",
 "EDS w połączeniu z APID;"
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"SUPPLY"
 },
 
 {
@@ -4695,7 +5041,8 @@ answers:[
 "psa do wykrywania materiałów wybuchowych w połączeniu z kontrolą manualną;",
 "EDS w połączeniu z APID;"
 ],
-correct:[1,3,4,5]
+correct:[1,3,4,5],
+topic:"MAIL"
 },
 {
 question:"11. Podczas kontroli bezpieczeństwa bagażu rejestrowanego stosuje się:",
@@ -4707,7 +5054,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości narkotyków i substancji odurzających;",
 "psy do wykrywania urządzeń wybuchowych;"
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"HBS"
 },
 
 {
@@ -4719,7 +5067,8 @@ answers:[
 "urządzenia do prześwietlania osób niewykorzystujące promieniowania jonizującego;",
 "urządzenia rentgenowskie;"
 ],
-correct:[0,2,4]
+correct:[0,2,4],
+topic:"HBS"
 },
 
 {
@@ -4730,7 +5079,8 @@ answers:[
 "kontroli ręcznej wyłącznie zewnętrznych części bagażu bez ingerencji do jego wnętrza;",
 "wykorzystaniu psów do wykrywania materiałów wybuchowych;"
 ],
-correct:[0]
+correct:[0],
+topic:"HBS"
 },
 
 {
@@ -4741,7 +5091,8 @@ answers:[
 "uważa się za bezpieczne – nie zawierające przedmiotów zabronionych;",
 "poddawane są kontroli bezpieczeństwa przy użyciu np. kontroli manualnej;"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"HBS"
 },
 
 {
@@ -4752,7 +5103,8 @@ answers:[
 "poddaje się powtórnej kontroli bezpieczeństwa tylko wtedy, gdy przewożący go statek powietrzny odlatuje do Stanów Zjednoczonych Ameryki lub do Izraela;",
 "powinien być jak najszybciej dostarczony do statku powietrznego;"
 ],
-correct:[1]
+correct:[1],
+topic:"HBS"
 },
 
 {
@@ -4765,7 +5117,8 @@ answers:[
 "przedmioty przeznaczone do rąbania, takie jak siekiery, topory i tasaki.",
 "Semtex"
 ],
-correct:[0,2,3,5]
+correct:[0,2,3,5],
+topic:"HBS"
 },
 
 {
@@ -4778,7 +5131,8 @@ answers:[
 "urządzenia do porażania, takie jak paralizatory, tasery i pałki paraliżujące;",
 "pentryt;"
 ],
-correct:[0,1,3,5]
+correct:[0,1,3,5],
+topic:"HBS"
 },
 
 {
@@ -4790,7 +5144,8 @@ answers:[
 "zmontowane urządzenia wybuchowe, które nie są przewożone zgodnie z mającymi zastosowanie zasadami bezpieczeństwa w lotnictwie cywilnym.",
 "zmontowane urządzenia zapalające, które nie są przewożone zgodnie z mającymi zastosowanie zasadami bezpieczeństwa w lotnictwie cywilnym."
 ],
-correct:[3,4]
+correct:[3,4],
+topic:"CARGO"
 },
 
 {
@@ -4803,7 +5158,8 @@ answers:[
 "jeżeli OKB nie może uzyskać wystarczającej pewności pozwalającej na potwierdzenie, że przesyłka nie zawiera żadnych przedmiotów zabronionych, przesyłkę poddaje się ponownej kontroli bezpieczeństwa, dopóki OKB nie uzna, że wymogi kontroli zostały spełnione;",
 "stosuje się środki lub metody naajbardziej skuteczne w wykrywaniu przedmiotów zabronionych, biorąc pod uwagę rodzaj przesyłki;"
 ],
-correct:[1,3,4,5]
+correct:[1,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -4816,7 +5172,8 @@ answers:[
 "zestaw sztućców;",
 "wiertarki;"
 ],
-correct:[0,1,3]
+correct:[0,1,3],
+topic:"SUPPLY"
 },
 
 {
@@ -4829,7 +5186,8 @@ answers:[
 "rękawice robocze;",
 "celownik teleskopowy do broni palnej;"
 ],
-correct:[0,1,2,3]
+correct:[0,1,2,3],
+topic:"SUPPLY"
 },
 
 {
@@ -4842,7 +5200,8 @@ answers:[
 "spirytus salicylowy;",
 "strzelby myśliwskie."
 ],
-correct:[1,2,5]
+correct:[1,2,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4855,7 +5214,8 @@ answers:[
 "plastyczne materiały wybuchowe;",
 "zabawki w kształcie wiertarek, które można pomylić z prawdziwymi wiertarkami."
 ],
-correct:[0,3,4]
+correct:[0,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -4867,7 +5227,8 @@ answers:[
 "zapewniają dostateczny poziom bezpieczeństwa, na ile to możliwe, jeżeli chodzi o wykrycie przedmiotów zabronionych ukrytych w zaopatrzeniu;",
 "są zgodne z Rozp. 2015/1998;"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -4880,7 +5241,8 @@ answers:[
 "urządzenie EDS;",
 "ETD w połączeniu z kontrolą wzrokową;"
 ],
-correct:[1,2,4,5]
+correct:[1,2,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4892,7 +5254,8 @@ answers:[
 "kontrola wzrokowa;",
 "urządzenie EDS;"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -4905,7 +5268,8 @@ answers:[
 "urządzenia rentgenowskie;",
 "urządzenie do wykrywania oparów materiałów wybuchowych;"
 ],
-correct:[1,3,4]
+correct:[1,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -4918,7 +5282,8 @@ answers:[
 "są fizycznie zabezpieczone w sposób zapobiegający wprowadzeniu przedmiotu zabronionego;",
 "nie są pozostawione bez nadzoru, a dostęp do nich mają wyłącznie osoby zaangażowane w zabezpieczanie ładunku i poczty oraz załadowywanie ich na statek powietrzny;"
 ],
-correct:[0,3,4,5]
+correct:[0,3,4,5],
+topic:"CARGO"
 },
 
 {
@@ -4928,7 +5293,8 @@ answers:[
 "decyzję o dopuszczeniu tego artykułu do strefy zastrzeżonej lotniska, zamiast operatora kontroli bezpieczeństwa podejmuje zarządzający lotniskiem;",
 "oznacza to, że najprawdopodobniej nie ma w nim żadnych przedmiotów zabronionych i może zostać dopuszczony do strefy zastrzeżonej lotniska."
 ],
-correct:[0]
+correct:[0],
+topic:"SUPPLY"
 },
 
 {
@@ -4941,7 +5307,8 @@ answers:[
 "nożyczki o długości 6 cm;",
 "piłki tenisowe;"
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"MAIL"
 },
 {
 question:"31. Następujące przedmioty uznaje się za przedmioty zabronione w zaopatrzeniu portu lotniczego:",
@@ -4953,7 +5320,8 @@ answers:[
 "pałki paraliżujące;",
 "pistolety startowe;"
 ],
-correct:[0,4,5]
+correct:[0,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -4966,7 +5334,8 @@ answers:[
 "zdjęcie posiadacza.",
 "numer karty identyfikacyjnej;"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"OTHER"
 },
 
 {
@@ -4979,7 +5348,8 @@ answers:[
 "urządzenie do prześwietlania osób niewykorzystujące promieniowania jonizującego;",
 "psa do wykrywania materiałów wybuchowych;"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topipc:"PERSON"
 },
 
 {
@@ -4992,7 +5362,8 @@ answers:[
 "kubotany;",
 "stalowa gwiazdka do rzucania shuriken;"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -5005,7 +5376,8 @@ answers:[
 "noże o długości ostrza 6 cm;",
 "nożyczki o długości 7 cm;"
 ],
-correct:[0,1,2,5]
+correct:[0,1,2,5],
+topic:"MAIL"
 },
 
 {
@@ -5018,7 +5390,8 @@ answers:[
 "pistolety startowe;",
 "spirytus salicylowy;"
 ],
-correct:[0,3,4]
+correct:[0,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -5029,7 +5402,8 @@ answers:[
 "Straż Graniczna;",
 "wewnętrzna służba ochrony lotniska."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -5040,7 +5414,8 @@ answers:[
 "pozytywne ukończenie szkolenia specjalistycznego zawodowego osób stosujących środki kontroli w zakresie ochrony ładunku i poczty inne niż kontrola bezpieczeństwa;",
 "pozytywne ukończenie szkolenia w celu uzyskania certyfikatu operatora kontroli bezpieczeństwa."
 ],
-correct:[0,3]
+correct:[0,3],
+topic:"OTHER"
 },
 
 {
@@ -5052,7 +5427,8 @@ answers:[
 "sprawdzania przedmiotów wprowadzanych do strefy zastrzeżonej lotniska;",
 "zwolnienia z kontroli bezpieczeństwa dzieci poniżej 5 roku życia."
 ],
-correct:[1,2,3]
+correct:[1,2,3],
+topic:"OTHER"
 },
 
 {
@@ -5065,7 +5441,8 @@ answers:[
 "posiadanie wpisu na kwalifikowanego pracownika ochrony fizycznej;",
 "ukończone 21 lat;"
 ],
-correct:[0,3]
+correct:[0,3],
+topic:"OTHER"
 }
 ],
 test10: [
@@ -5078,7 +5455,8 @@ answers:[
 "są fizycznie zabezpieczone w sposób zapobiegający wprowadzeniu przedmiotu zabronionego;",
 "umieszcza się w tych częściach pomieszczeń zarejestrowanego agenta, do których dostęp jest kontrolowany;"
 ],
-correct:[1,3,4]
+correct:[1,3,4],
+topic:"CARGO"
 },
 
 {
@@ -5091,7 +5469,8 @@ answers:[
 "zaopatrzenia pokładowego;",
 "zaopatrzenia portu lotniczego;"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"MAIL"
 },
 
 {
@@ -5104,7 +5483,8 @@ answers:[
 "zaopatrzenia pokładowego;",
 "zaopatrzenia portu lotniczego;"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"MAIL"
 },
 
 {
@@ -5117,7 +5497,8 @@ answers:[
 "urządzenie do wykrywania oparów materiałów wybuchowych",
 "urządzenie do wykrywania metali"
 ],
-correct:[0,1,3,4,5]
+correct:[0,1,3,4,5],
+topic:"MAIL"
 },
 
 {
@@ -5130,7 +5511,8 @@ answers:[
 "EDS w połączeniu z APID",
 "ETD w połączeniu z HHMD"
 ],
-correct:[2]
+correct:[2],
+topic:"MAIL"
 },
 
 {
@@ -5143,7 +5525,8 @@ answers:[
 "kontrola wzrokowa",
 "PWMW w połączeniu z kontrolą wzrokową"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"MAIL"
 },
 
 {
@@ -5156,7 +5539,8 @@ answers:[
 "pistolety do wstrzeliwania kołków i gwoździ.",
 "Heksogen;"
 ],
-correct:[0,1,5]
+correct:[0,1,5],
+topic:"MAIL"
 },
 
 {
@@ -5169,7 +5553,8 @@ answers:[
 "zgodnie z oceną ryzyka dokonaną przez właściwy organ krajowy;",
 "zgodnie z oceną ryzyka dokonaną przez Zarządzającego lotniskiem;"
 ],
-correct:[1]
+correct:[1],
+topic:"SUPPLY"
 },
 
 {
@@ -5182,7 +5567,8 @@ answers:[
 "rozpylacze kwasu;",
 "telefony komórkowe."
 ],
-correct:[0,2,4]
+correct:[0,2,4],
+topic:"SUPPLY"
 },
 
 {
@@ -5195,7 +5581,8 @@ answers:[
 "pistolety i rewolwery;",
 "szpady i szable."
 ],
-correct:[0,1,4,5]
+correct:[0,1,4,5],
+topic:"MAIL"
 },
 {
 question:"11. Podczas kontroli bezpieczeństwa zaopatrzenia pokładowego zastosowane środki lub metoda:",
@@ -5207,7 +5594,8 @@ answers:[
 "zawsze przewidują kontrolę z wykorzystaniem urządzenia RTG;",
 "zawsze przewidują kontrolę z wykorzystaniem urządzenia EDS;"
 ],
-correct:[1]
+correct:[1],
+topic:"SUPPLY"
 },
 
 {
@@ -5220,7 +5608,8 @@ answers:[
 "wyrzutnie rac sygnalizacyjnych.",
 "katapulty;"
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"MAIL"
 },
 
 {
@@ -5233,7 +5622,8 @@ answers:[
 "urządzenia do uboju zwierząt;",
 "katapulty;"
 ],
-correct:[2,3,4,5]
+correct:[2,3,4,5],
+topic:"SUPPLY"
 },
 
 {
@@ -5246,7 +5636,8 @@ answers:[
 "repliki urządzeń wybuchowych;",
 "strzelby myśliwskie."
 ],
-correct:[0,1,2,4,5]
+correct:[0,1,2,4,5],
+topic:"MAIL"
 },
 
 {
@@ -5259,7 +5650,8 @@ answers:[
 "urządzenie EDS;",
 "ETD w połączeniu z EVD"
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -5272,7 +5664,8 @@ answers:[
 "nie zastępuje wymogów kontroli manualnej;",
 "stosowany jest wyłącznie do kontroli bezpieczeństwa kobiet w zaawansowanej ciąży."
 ],
-correct:[2,4]
+correct:[2,4],
+topic:"PERSON"
 },
 
 {
@@ -5285,7 +5678,8 @@ answers:[
 "strażacy Państwowej Straży Pożarnej upoważnieni do przeprowadzania czynności kontrolno-rozpoznawczych na lotnisku posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku.",
 "pracownicy i funkcjonariusze Policji posiadający ważną kartę identyfikacyjną portu lotniczego podczas wykonywania zadań i obowiązków służbowych na lotnisku;"
 ],
-correct:[4]
+correct:[4],
+topic:"PERSON"
 },
 
 {
@@ -5298,7 +5692,8 @@ answers:[
 "urządzenie rentgenowskie.",
 "EDS w połączeniu z APID;"
 ],
-correct:[2,3,4]
+correct:[2,3,4],
+topic:"SUPPLY"
 },
 
 {
@@ -5310,7 +5705,8 @@ answers:[
 "psów do wykrywania materiałów wybuchowych;",
 "urządzeń do wykrywania śladowych płynów wybuchowych;"
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+toppic:"PERSON"
 },
 
 {
@@ -5323,7 +5719,8 @@ answers:[
 "strzały do łuków;",
 "tasaki kuchenne."
 ],
-correct:[0,2,4,5]
+correct:[0,2,4,5],
+topic:"PERSON"
 },
 
 {
@@ -5333,7 +5730,8 @@ answers:[
 "są fizycznie zabezpieczone tak, by nie dopuścić do wprowadzenia jakiegokolwiek przedmiotu, który mógłby zostać użyty w akcie bezprawnej ingerencji;",
 "tak przewiduje program ochrony przewoźnika lotniczego."
 ],
-correct:[1]
+correct:[1],
+topic:"CARGO"
 },
 
 {
@@ -5343,7 +5741,8 @@ answers:[
 "zawierają jedynie części samochodowe;",
 "znajdują się w części krytycznej strefy zastrzeżonej lotniska."
 ],
-correct:[2]
+correct:[2],
+topic:"CARGO"
 },
 
 {
@@ -5355,7 +5754,8 @@ answers:[
 "sprawdzenie przeszłości nadawcy przesyłki;",
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[1,2,4]
+correct:[1,2,4],
+topic:"CARGO"
 },
 
 {
@@ -5366,7 +5766,8 @@ answers:[
 "gdy ukrycie przedmiotów zabronionych jest niemożliwe ze względu na charakter zaopatrzenia;",
 "w małych portach lotniczych."
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"SUPPLY"
 },
 
 {
@@ -5378,7 +5779,8 @@ answers:[
 "systemy wykrywania materiałów wybuchowych;",
 "urządzenia rentgenowskie."
 ],
-correct:[1,4]
+correct:[1,4],
+topic:"CARGO"
 },
 
 {
@@ -5389,7 +5791,8 @@ answers:[
 "urządzenia do prześwietlania osób niewykorzystujące promieniowania jonizującego;",
 "urządzenia rentgenowskie."
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"MAIL"
 },
 
 {
@@ -5400,7 +5803,8 @@ answers:[
 "służba ochrony lotniska;",
 "Straż Graniczna."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -5412,7 +5816,8 @@ answers:[
 "systemy do wykrywania urządzeń wybuchowych;",
 "urządzenia do wykrywania metali."
 ],
-correct:[0,1]
+correct:[0,1],
+topic:"SUPPLY"
 },
 
 {
@@ -5423,7 +5828,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznymi wykrywaczami metali;",
 "urządzeń do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"PERSON"
 },
 
 {
@@ -5433,7 +5839,8 @@ answers:[
 "która ukończyła szkolenie świadomości ochrony lotnictwa cywilnego;",
 "potrafiąca nawiązać kontakt z osobami kontrolowanymi w co najmniej jednym języku obcym w podstawowym zakresie."
 ],
-correct:[0]
+correct:[0],
+topic:"OTHER"
 },
 {
 question:"31. Ręczny wykrywacz metali:",
@@ -5443,7 +5850,8 @@ answers:[
 "jest w stanie wykryć przedmioty plastikowe;",
 "posiada wskaźnik wizualny sygnalizujący, że urządzenie funkcjonuje."
 ],
-correct:[1,3]
+correct:[1,3],
+topic:"OTHER"
 },
 
 {
@@ -5453,7 +5861,8 @@ answers:[
 "pozostają tam nie dłużej niż jedną godzinę;",
 "tak przewiduje program ochrony przewoźnika lotniczego."
 ],
-correct:[0]
+correct:[0],
+topic:"CARGO"
 },
 
 {
@@ -5463,7 +5872,8 @@ answers:[
 "może być wyłączony, jeśli przeszkadza kontrolowanym podróżnym;",
 "wskazuje siłę sygnału wykrytego przez bramkę."
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"OTHER"
 },
 
 {
@@ -5473,7 +5883,8 @@ answers:[
 "w przypadku wykrycia przedmiotów metalowych;",
 "w przypadku wykrycia przedmiotu zapobiegającego wykryciu materiału wybuchowego."
 ],
-correct:[0,2]
+correct:[0,2],
+topic:"OTHER"
 },
 
 {
@@ -5484,7 +5895,8 @@ answers:[
 "posiadające certyfikat operatora kontroli bezpieczeństwa wydany lub uznany przez Prezesa Urzędu Lotnictwa Cywilnego;",
 "wpisane na prowadzoną przez Prezesa Urzędu Lotnictwa Cywilnego listę operatorów kontroli bezpieczeństwa."
 ],
-correct:[0,2,3]
+correct:[0,2,3],
+topic:"OTHER"
 },
 
 {
@@ -5496,7 +5908,8 @@ answers:[
 "samodzielnej neutralizacji na stanowisku kontrolnym wykrytego urządzenia wybuchowego;",
 "zwolnienia z kontroli bezpieczeństwa osób z wyraźnym kalectwem."
 ],
-correct:[0,1,2]
+correct:[0,1,2],
+topic:"OTHER"
 },
 
 {
@@ -5507,7 +5920,8 @@ answers:[
 "Prezes Urzędu Lotnictwa Cywilnego;",
 "zarządzający lotniskiem."
 ],
-correct:[3]
+correct:[3],
+topic:"OTHER"
 },
 
 {
@@ -5519,7 +5933,8 @@ answers:[
 "systemy do wykrywania urządzeń wybuchowych;",
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[0,1,3,4]
+correct:[0,1,3,4],
+topic:"CARGO"
 },
 
 {
@@ -5530,7 +5945,8 @@ answers:[
 "urządzenia do wykrywania śladowych ilości materiałów wybuchowych w połączeniu z ręcznymi wykrywaczami metali;",
 "urządzeń do wykrywania śladowych ilości materiałów wybuchowych."
 ],
-correct:[2,3]
+correct:[2,3],
+topic:"PERSON"
 },
 
 {
@@ -5540,7 +5956,8 @@ answers:[
 "która ukończyła szkolenie świadomości ochrony lotnictwa cywilnego;",
 "potrafiąca nawiązać kontakt z osobami kontrolowanymi w co najmniej jednym języku obcym w podstawowym zakresie."
 ],
-correct:[]
+correct:[0],
+topic:"OTHER"
 }
 ]
 
@@ -5578,6 +5995,12 @@ let statsBtn = document.createElement("button");
 statsBtn.innerText = "📊 Topics Dashboard";
 statsBtn.style.background = "#f59e0b";
 statsBtn.onclick = showTopicDashboard;
+let topicBtn = document.createElement("button");
+topicBtn.innerText = "📚 Choose Topic";
+topicBtn.style.background = "#8b5cf6";
+topicBtn.onclick = showTopicSelector;
+
+menu.appendChild(topicBtn);
 
 menu.appendChild(statsBtn);
 
@@ -5857,6 +6280,13 @@ statsBtn.onclick = showTopicDashboard;
 
 menu.appendChild(statsBtn);
 
+let topicBtn = document.createElement("button");
+topicBtn.innerText = "📚 Choose Topic";
+topicBtn.style.background = "#8b5cf6";
+topicBtn.onclick = showTopicSelector;
+
+menu.appendChild(topicBtn);
+
 }
 function showTopicDashboard(){
 
@@ -5867,7 +6297,24 @@ let stats = {};
 
 currentQuestions.forEach((q,i)=>{
 
-let topic = q.topic || "General";
+    let topicsList = Array.isArray(q.topic) ? q.topic : [q.topic || "General"];
+
+topicsList.forEach(topic => {
+
+if(!stats[topic]){
+stats[topic] = { total: 0, correct: 0 };
+}
+
+stats[topic].total++;
+
+let user = userAnswers[i] || [];
+let correct = q.correct || [];
+
+if(JSON.stringify([...user].sort()) === JSON.stringify([...correct].sort())){
+stats[topic].correct++;
+}
+
+});
 
 if(!stats[topic]){
 stats[topic] = {
@@ -6128,7 +6575,88 @@ return
 showResult()
 
 }
+function showTopicSelector(){
 
+let resultDiv = document.getElementById("result");
+
+// 🔥 GET ALL UNIQUE TOPICS
+let topics = new Set();
+
+Object.values(tests).forEach(test=>{
+test.forEach(q=>{
+    if(Array.isArray(q.topic)){
+q.topic.forEach(t => topics.add(t));
+} else {
+topics.add(q.topic || "General");
+}
+});
+});
+
+// 🎨 BUILD UI
+let html = `<h2>📚 Select Topic</h2><br>`;
+
+topics.forEach(topic=>{
+html += `
+<button class="topicSelectBtn" onclick="startTopicTest('${topic}')">
+${topic}
+</button>
+`;
+});
+
+html += `
+<br><br>
+<button onclick="goToMenu()">🏠 Back</button>
+`;
+
+document.getElementById("menu").style.display = "none";
+resultDiv.style.display = "block";
+resultDiv.innerHTML = html;
+
+}
+function startTopicTest(selectedTopic){
+
+let allQuestions = [];
+
+Object.values(tests).forEach(test=>{
+test.forEach(q=>{
+    if(
+(Array.isArray(q.topic) && q.topic.includes(selectedTopic)) ||
+(q.topic === selectedTopic)
+){
+allQuestions.push(q);
+}
+});
+});
+
+// ❗ safety
+if(allQuestions.length === 0){
+alert("No questions for this topic");
+return;
+}
+
+// shuffle
+allQuestions.sort(()=>Math.random()-0.5);
+
+// limit (optional)
+currentQuestions = allQuestions.slice(0, 40);
+
+// reset
+currentIndex = 0;
+correctAnswers = 0;
+userAnswers = [];
+
+// show quiz
+document.getElementById("menu").style.display = "none";
+document.getElementById("result").style.display = "none";
+document.getElementById("quiz").style.display = "block";
+
+// start
+createQuestionGrid();
+timeLeft = 2400;
+startTimer();
+showQuestion();
+
+}
 
 
 function toggleDarkMode(){
